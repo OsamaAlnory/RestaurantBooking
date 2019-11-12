@@ -11,7 +11,7 @@ namespace RestaurantBooking
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new StartPage();
         }
 
         protected override void OnStart()
