@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace RestaurantBooking
+namespace RestaurantBooking.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class StartPage : ContentPage
@@ -16,8 +16,5 @@ namespace RestaurantBooking
 		{
 			InitializeComponent ();
 		}
-
-        
-
-    }
+	}
 }

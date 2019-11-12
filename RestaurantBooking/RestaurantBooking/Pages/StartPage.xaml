@@ -1,13 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RestaurantBooking.StartPage" BackgroundColor="Yellow">
+             x:Class="RestaurantBooking.Pages.StartPage">
     <StackLayout>
-        <Button Margin="20" Text="Bish azz nibba" TextColor="Blue" FontSize="50" FontFamily="arial" BorderRadius="10"/>
-        
-        
-
-
+        <Button Text="Click Here" BackgroundColor="Green" VerticalOptions="CenterAndExpand"/>
     </StackLayout>
-
 </ContentPage>
