@@ -15,6 +15,7 @@ namespace RestaurantBooking.Pages
 		public StartPage ()
 		{
 			InitializeComponent ();
+            background.Source = App.getImage("light_blue.png");
 		}
 	}
 }

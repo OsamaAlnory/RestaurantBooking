@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,11 +8,19 @@ namespace RestaurantBooking
 {
     public partial class App : Application
     {
+
+        private static string PATH = "RestaurantBooking.Images.";
+
         public App()
         {
             InitializeComponent();
 
             MainPage = new Pages.StartPage();
+        }
+
+        public static ImageSource getImage(string loc)
+        {
+            return ImageSource.FromResource(PATH + "" + loc, Assembly.GetExecutingAssembly());
         }
 
         protected override void OnStart()
