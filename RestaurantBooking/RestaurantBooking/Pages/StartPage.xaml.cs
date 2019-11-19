@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using RestaurantBooking.Components;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,5 +16,10 @@ namespace RestaurantBooking.Pages
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            new Popup(new SuccessMessage("Good"), this).Show();
+        }
+    }
 }

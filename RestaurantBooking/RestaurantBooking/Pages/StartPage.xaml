@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RestaurantBooking.Pages.StartPage">
     <StackLayout>
-        <Button Text="Click Here" BackgroundColor="Green" VerticalOptions="CenterAndExpand"/>
+        <Button Text="Click Here" BackgroundColor="Green" VerticalOptions="CenterAndExpand" TextColor="White"
+                Clicked="Button_Clicked"/>
     </StackLayout>
 </ContentPage>
