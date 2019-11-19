@@ -2,8 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RestaurantBooking.Pages.StartPage">
-    <StackLayout>
-        <Button Text="Click Here" BackgroundColor="Green" VerticalOptions="CenterAndExpand" TextColor="White"
-                Clicked="Button_Clicked"/>
-    </StackLayout>
+    <AbsoluteLayout>
+        <Image x:Name="background" AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     Padding="10">
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Button Text="Skanna QR"/>
+            </StackLayout>
+            <Button Text="Logga in" HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </AbsoluteLayout>
 </ContentPage>
