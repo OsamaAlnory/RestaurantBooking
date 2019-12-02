@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestaurantBooking.Pages;
+using System;
 using System.Reflection;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,7 +16,7 @@ namespace RestaurantBooking
         {
             InitializeComponent();
 
-            MainPage = new Pages.StartPage();
+            MainPage = new NavigationPage(new StartPage());
         }
 
         public static ImageSource getImage(string loc)

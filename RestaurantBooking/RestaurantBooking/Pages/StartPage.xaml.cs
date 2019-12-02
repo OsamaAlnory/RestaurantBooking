@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using RestaurantBooking.Components;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ZXing.Net.Mobile.Forms;
 
 namespace RestaurantBooking.Pages
 {
@@ -15,12 +16,37 @@ namespace RestaurantBooking.Pages
 		public StartPage ()
 		{
 			InitializeComponent ();
-            background.Source = App.getImage("light_blue.png");
+            background.Source = App.getImage("123.jpg");
+            qr.Source = App.getImage("qr.png");
+            TapGestureRecognizer tap = new TapGestureRecognizer();
+            tap.Tapped += (s, e) =>
+            {
+                Camera();
+            };
+            button.GestureRecognizers.Add(tap);
+            
 		}
-
-        private void Button_Clicked(object sender, EventArgs e)
+          
+        public async void Camera()
         {
-            new Popup(new SuccessMessage("Good"), this).Show();
+            var camera = new ZXingScannerPage();
+            camera.OnScanResult += (result) =>
+            {
+                camera.IsScanning = false;
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    Navigation.PopAsync();
+
+                    DisplayAlert("welcome", result.ToString(), "cancel");
+                } );
+            };
+            await Navigation.PushAsync(camera);
         }
+
+        private void Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("cs", "kos", "cos");
+        }
+
     }
 }
