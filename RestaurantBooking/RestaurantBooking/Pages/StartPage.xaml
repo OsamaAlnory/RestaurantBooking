@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:an="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="RestaurantBooking.Pages.StartPage" >
+    <AbsoluteLayout>
+        <Image x:Name="background" AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0,0,1,1" Aspect="AspectFill"/>
+        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     Padding="10">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <!--<Button Text="Skanna QR" HorizontalOptions="FillAndExpand" CornerRadius="10"
+                        Margin="10,0,10,0" Clicked="Button_Clicked"/>-->
+                
+                <Frame x:Name="button" Padding="0" CornerRadius="20" BackgroundColor="White" OutlineColor="Black" HorizontalOptions="CenterAndExpand">
+                    <Image x:Name="qr" HeightRequest="200" WidthRequest="200"/>
+                </Frame>
+            </StackLayout>
+            <Label Text="Logga in" VerticalOptions="EndAndExpand" FontSize="20"
+                   HorizontalOptions="CenterAndExpand" TextColor="Black"/>
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>
