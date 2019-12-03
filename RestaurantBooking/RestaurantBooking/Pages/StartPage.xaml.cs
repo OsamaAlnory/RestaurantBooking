@@ -36,7 +36,17 @@ namespace RestaurantBooking.Pages
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     Navigation.PopAsync();
-
+                    /*
+                    string sin = "RES534432 5";
+                    if (sin.StartsWith("RES"))
+                    {
+                        string[] d = sin.Split(' ');
+                        
+                    } else
+                    {
+                        
+                    }
+                    */
                     DisplayAlert("welcome", result.ToString(), "cancel");
                 } );
             };
