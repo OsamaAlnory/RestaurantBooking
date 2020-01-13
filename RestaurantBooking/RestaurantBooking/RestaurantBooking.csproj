@@ -12,15 +12,19 @@
   <ItemGroup>
     <None Remove="Images\123.jpg" />
     <None Remove="Images\background.jpg" />
-    <None Remove="Images\light_blue.png" />
+    <None Remove="Images\main-icon.png" />
     <None Remove="Images\qr.png" />
+    <None Remove="Images\qr1.png" />
+    <None Remove="Images\title.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Images\123.jpg" />
+    <EmbeddedResource Include="Images\main-icon.png" />
+    <EmbeddedResource Include="Images\title.png" />
     <EmbeddedResource Include="Images\background.jpg" />
-    <EmbeddedResource Include="Images\light_blue.png" />
     <EmbeddedResource Include="Images\qr.png" />
+    <EmbeddedResource Include="Images\qr1.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +36,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Elements\Card.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\MenuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\RestaurantPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Pages\StartPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

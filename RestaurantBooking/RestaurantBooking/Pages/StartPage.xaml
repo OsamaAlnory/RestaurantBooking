@@ -8,12 +8,14 @@
                AbsoluteLayout.LayoutBounds="0,0,1,1" Aspect="AspectFill"/>
         <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"
                      Padding="10">
+            <Image x:Name="icon" HeightRequest="50" WidthRequest="50" Margin="0,20,0,0"/>
+            <Image x:Name="title"/>
             <StackLayout VerticalOptions="CenterAndExpand">
                 <!--<Button Text="Skanna QR" HorizontalOptions="FillAndExpand" CornerRadius="10"
                         Margin="10,0,10,0" Clicked="Button_Clicked"/>-->
                 
-                <Frame x:Name="button" Padding="0" CornerRadius="20" BackgroundColor="White" OutlineColor="Black" HorizontalOptions="CenterAndExpand">
-                    <Image x:Name="qr" HeightRequest="200" WidthRequest="200"/>
+                <Frame x:Name="button" Padding="0" CornerRadius="20" BackgroundColor="Transparent"  HorizontalOptions="CenterAndExpand">
+                    <Image x:Name="qr1" HeightRequest="200" WidthRequest="200"/>
                 </Frame>
             </StackLayout>
             <Label Text="Logga in" VerticalOptions="EndAndExpand" FontSize="20"

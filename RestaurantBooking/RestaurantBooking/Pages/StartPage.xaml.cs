@@ -17,7 +17,8 @@ namespace RestaurantBooking.Pages
 		{
 			InitializeComponent ();
             background.Source = App.getImage("123.jpg");
-            qr.Source = App.getImage("qr.png");
+            qr1.Source = App.getImage("qr1.png");
+            icon.Source = App.getImage("main-icon.png");
             TapGestureRecognizer tap = new TapGestureRecognizer();
             tap.Tapped += (s, e) =>
             {
@@ -36,8 +37,11 @@ namespace RestaurantBooking.Pages
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     Navigation.PopAsync();
-
-                    DisplayAlert("welcome", result.ToString(), "cancel");
+                    string res = result.ToString();
+                    // "RES123 10"
+                    string[] d = res.Split(' ');
+                    DisplayAlert("welcome", "Table number is "+d[1]+ " ks", "cancel");
+                    Navigation.PushAsync(new MenuPage());
                 } );
             };
             await Navigation.PushAsync(camera);

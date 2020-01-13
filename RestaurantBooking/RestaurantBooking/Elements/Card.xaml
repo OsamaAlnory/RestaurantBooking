@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Frame xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="RestaurantBooking.Elements.Card" CornerRadius="20" Padding="0">
+    <StackLayout HeightRequest="200">
+        <AbsoluteLayout>
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Label Text="This meal is goodi" TextColor="Crimson"/>
+            </StackLayout>
+            <Image x:Name="foodImg" Aspect="Fill" AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+        </AbsoluteLayout>
+    </StackLayout>
+</Frame>

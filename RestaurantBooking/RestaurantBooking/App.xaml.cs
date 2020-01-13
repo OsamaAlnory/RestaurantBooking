@@ -15,8 +15,9 @@ namespace RestaurantBooking
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new StartPage());
+            //MainPage = new RestaurantPage();
+            //MainPage = new NavigationPage(new StartPage());
+            MainPage = new MenuPage();
         }
 
         public static ImageSource getImage(string loc)
