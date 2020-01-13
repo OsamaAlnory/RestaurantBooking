@@ -17,7 +17,7 @@ namespace RestaurantBooking.Pages
 		{
 			InitializeComponent ();
             background.Source = App.getImage("123.jpg");
-            qr1.Source = App.getImage("qr1.png");
+            qr1.Source = App.getImage("qrcode.png");
             icon.Source = App.getImage("main-icon.png");
             TapGestureRecognizer tap = new TapGestureRecognizer();
             tap.Tapped += (s, e) =>
@@ -52,5 +52,9 @@ namespace RestaurantBooking.Pages
             DisplayAlert("cs", "kos", "cos");
         }
 
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new LoginPage());
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using RestaurantBooking.Pages;
+﻿using RestaurantBooking.Database;
+using RestaurantBooking.Pages;
 using System;
 using System.Reflection;
 using Xamarin.Forms;
@@ -16,8 +17,8 @@ namespace RestaurantBooking
         {
             InitializeComponent();
             //MainPage = new RestaurantPage();
-            //MainPage = new NavigationPage(new StartPage());
-            MainPage = new MenuPage();
+            MainPage = new NavigationPage(new StartPage());
+            User.users.Add(new User { RestID = "fuck", Password = "asd", Username="Test", UType=1});
         }
 
         public static ImageSource getImage(string loc)

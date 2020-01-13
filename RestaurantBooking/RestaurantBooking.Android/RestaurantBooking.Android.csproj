@@ -81,6 +81,7 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\error.json" />
     <AndroidAsset Include="Assets\success.json" />
+    <AndroidAsset Include="Assets\login-success.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

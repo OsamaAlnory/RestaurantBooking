@@ -15,12 +15,14 @@
     <None Remove="Images\main-icon.png" />
     <None Remove="Images\qr.png" />
     <None Remove="Images\qr1.png" />
+    <None Remove="Images\qrcode.png" />
     <None Remove="Images\title.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Images\123.jpg" />
     <EmbeddedResource Include="Images\main-icon.png" />
+    <EmbeddedResource Include="Images\qrcode.png" />
     <EmbeddedResource Include="Images\title.png" />
     <EmbeddedResource Include="Images\background.jpg" />
     <EmbeddedResource Include="Images\qr.png" />
@@ -37,6 +39,12 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Elements\Card.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\DisplayPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\MenuPage.xaml">
