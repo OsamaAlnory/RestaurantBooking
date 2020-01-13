@@ -18,8 +18,8 @@
                     <Image x:Name="qr1" HeightRequest="200" WidthRequest="200"/>
                 </Frame>
             </StackLayout>
-            <Label Text="Logga in" VerticalOptions="EndAndExpand" FontSize="20"
-                   HorizontalOptions="CenterAndExpand" TextColor="Black"/>
+            <Button Text="Logga in" BackgroundColor="#1A387A" Opacity="0.8" TextColor="White" BorderRadius="12"
+                    HorizontalOptions="Center" Clicked="Button_Clicked"/>
         </StackLayout>
     </AbsoluteLayout>
 </ContentPage>
