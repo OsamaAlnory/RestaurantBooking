@@ -16,14 +16,22 @@ namespace RestaurantBooking.Pages
         public MenuPage()
         {
             InitializeComponent();
-            AddCard(new Card("123.jpg"));
-            AddCard(new Card("background.jpg"));
+            AddCard("123.jpg");
+            AddCard("background.jpg");
+            AddCard("background.jpg");
+            AddCard("background.jpg");
+            AddCard("background.jpg");
         }
 
-
-        private void AddCard(Card card)
+        private void AddCard(string src)
         {
-            box.Children.Add(card);
+            box.Children.Add(new Card(src, this));
+        }
+
+        public void OnTapped(Card card)
+        {
+            //DisplayAlert("dawd", "dawd", "dawda");
+            Navigation.PushAsync(new MealDetails(card.src));
         }
 
     }

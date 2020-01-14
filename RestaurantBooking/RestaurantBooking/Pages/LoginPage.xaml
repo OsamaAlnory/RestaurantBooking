@@ -4,19 +4,24 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:an="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
-             x:Class="RestaurantBooking.Pages.LoginPage" BackgroundColor="#1A387A">
-    <StackLayout Padding="20" Spacing="20">
-        <Label Text="Login as admin" FontAttributes="Bold" TextColor="White" HorizontalTextAlignment="Center"
+             xmlns:dir="clr-namespace:RestaurantBooking.Components"
+             x:Class="RestaurantBooking.Pages.LoginPage">
+    <dir:GradientLayout ColorsList="#1A387A,#d422a4"
+         Mode="ToBottom">
+        <StackLayout Padding="20" Spacing="20">
+            <Label Text="Login as admin" FontAttributes="Bold" TextColor="White" HorizontalTextAlignment="Center"
                FontSize="24" Margin="0,0,0,20"/>
-        <Frame CornerRadius="20" Padding="5">
-            <Entry Placeholder="Username" x:Name="uname" BackgroundColor="White" TextColor="Black" HorizontalTextAlignment="Center"/>
-        </Frame>
-        <Frame CornerRadius="20" Padding="5">
-            <Entry Placeholder="Password" x:Name="password" IsPassword="True" BackgroundColor="White" TextColor="Black" HorizontalTextAlignment="Center"/>
-        </Frame>
-        <Button Text="Login" Style="{StaticResource CustomButton}" BackgroundColor="Purple" FontAttributes="Bold"
+            <Frame CornerRadius="20" Padding="5">
+                <dir:IEntry Placeholder="Username" x:Name="uname" BackgroundColor="White" TextColor="Black" HorizontalTextAlignment="Center"/>
+            </Frame>
+            <Frame CornerRadius="20" Padding="5">
+                <dir:IEntry Placeholder="Password" x:Name="password" IsPassword="True" BackgroundColor="White" TextColor="Black" HorizontalTextAlignment="Center"/>
+            </Frame>
+            <Button Text="Login" Style="{StaticResource CustomButton}" BackgroundColor="Purple" FontAttributes="Bold"
                 Clicked="Button_Clicked"/>
-        <an:AnimationView Animation="login-success.json" AutoPlay="False" HeightRequest="50"
+            <an:AnimationView Animation="login-success.json" AutoPlay="False" HeightRequest="50"
      WidthRequest="50" x:Name="animation" IsVisible="False" Speed="0.7"/>
-    </StackLayout>
+        </StackLayout>
+    </dir:GradientLayout>
+    
 </ContentPage>

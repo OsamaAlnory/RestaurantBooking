@@ -1,4 +1,5 @@
-﻿using RestaurantBooking.Database;
+﻿using Plugin.SharedTransitions;
+using RestaurantBooking.Database;
 using RestaurantBooking.Pages;
 using System;
 using System.Reflection;
@@ -17,6 +18,7 @@ namespace RestaurantBooking
         {
             InitializeComponent();
             //MainPage = new RestaurantPage();
+            //MainPage = new SharedTransitionNavigationPage(new MenuPage());
             MainPage = new NavigationPage(new StartPage());
             User.users.Add(new User { RestID = "fuck", Password = "asd", Username="Test", UType=1});
         }
