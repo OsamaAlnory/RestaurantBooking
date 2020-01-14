@@ -12,6 +12,7 @@
   <ItemGroup>
     <None Remove="Images\123.jpg" />
     <None Remove="Images\background.jpg" />
+    <None Remove="Images\cart.png" />
     <None Remove="Images\main-icon.png" />
     <None Remove="Images\qr.png" />
     <None Remove="Images\qr1.png" />
@@ -21,6 +22,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Images\123.jpg" />
+    <EmbeddedResource Include="Images\cart.png" />
     <EmbeddedResource Include="Images\main-icon.png" />
     <EmbeddedResource Include="Images\qrcode.png" />
     <EmbeddedResource Include="Images\title.png" />

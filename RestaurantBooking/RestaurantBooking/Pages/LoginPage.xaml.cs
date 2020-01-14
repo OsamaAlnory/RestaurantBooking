@@ -29,7 +29,7 @@ namespace RestaurantBooking.Pages
                 {
                     animation.IsVisible = true;
                     animation.Play();
-                    Device.StartTimer(TimeSpan.FromSeconds(2), () =>
+                    Device.StartTimer(TimeSpan.FromSeconds(4), () =>
                     {
                         if(user.UType == 0)
                         {

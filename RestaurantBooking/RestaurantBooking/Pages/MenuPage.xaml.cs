@@ -21,6 +21,7 @@ namespace RestaurantBooking.Pages
             AddCard("background.jpg");
             AddCard("background.jpg");
             AddCard("background.jpg");
+            cart.Source = App.getImage("cart.png");
         }
 
         private void AddCard(string src)
@@ -31,7 +32,7 @@ namespace RestaurantBooking.Pages
         public void OnTapped(Card card)
         {
             //DisplayAlert("dawd", "dawd", "dawda");
-            Navigation.PushAsync(new MealDetails(card.src));
+            //Navigation.PushAsync(new MealDetails());
         }
 
     }

@@ -3,11 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
              x:Class="RestaurantBooking.Pages.MenuPage">
     <StackLayout>
-        <Label Text="Välj meny" TextColor="Black" HorizontalOptions="Center" FontSize="30"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                     Padding="5">
+            <BoxView BackgroundColor="Green" CornerRadius="10" HorizontalOptions="StartAndExpand"/>
+            <Label Text="Menues" TextColor="Black" HorizontalOptions="CenterAndExpand" FontSize="30"/>
+            <Frame Padding="0" BorderColor="Blue" CornerRadius="20">
+                <Image x:Name="cart" HeightRequest="40"/>
+            </Frame>
+        </StackLayout>
         <ScrollView>
-            <StackLayout x:Name="box" Padding="20" Spacing="20">
+            <StackLayout x:Name="box" Padding="30" Spacing="20">
                 
             </StackLayout>
         </ScrollView>

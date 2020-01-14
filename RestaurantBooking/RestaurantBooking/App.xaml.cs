@@ -17,10 +17,9 @@ namespace RestaurantBooking
         public App()
         {
             InitializeComponent();
-            //MainPage = new RestaurantPage();
-            //MainPage = new SharedTransitionNavigationPage(new MenuPage());
-            MainPage = new NavigationPage(new StartPage());
-            User.users.Add(new User { RestID = "fuck", Password = "asd", Username="Test", UType=1});
+            MainPage = new SharedTransitionNavigationPage(new MenuPage());
+            //MainPage = new NavigationPage(new StartPage());
+            User.users.Add(new User { RestID = "fuck", Username="Test", Password = "asd", UType =1});
         }
 
         public static ImageSource getImage(string loc)

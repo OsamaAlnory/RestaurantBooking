@@ -12,10 +12,10 @@ namespace RestaurantBooking.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MealDetails : ContentPage
 	{
-		public MealDetails (string src)
+		public MealDetails ()
 		{
 			InitializeComponent ();
-            img.Source = App.getImage(src);
+            img.Source = App.getImage("123.jpg");
 		}
 	}
 }
