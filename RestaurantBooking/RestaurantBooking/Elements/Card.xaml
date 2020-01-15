@@ -6,12 +6,14 @@
              xmlns:an="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              x:Class="RestaurantBooking.Elements.Card" CornerRadius="20" Padding="0">
     <StackLayout HeightRequest="200" x:Name="stk">
-        <AbsoluteLayout>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout x:Name="loading_layout" AbsoluteLayout.LayoutFlags="All"
                          AbsoluteLayout.LayoutBounds="0,0,1,1" BackgroundColor="LightGray">
-                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                    <an:AnimationView x:Name="loading_animation" AutoPlay="True"/>
-                    <Label Text="Loading" FontAttributes="Bold" FontSize="25"/>
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                             Spacing="0">
+                    <an:AnimationView x:Name="loading_animation" AutoPlay="True" Loop="True" HeightRequest="80"
+                                      Animation="loading-product.json" WidthRequest="80"/>
+                    <Label Text="Loading" FontAttributes="Bold" FontSize="25" TextColor="Black"/>
                 </StackLayout>
             </StackLayout>
             <StackLayout x:Name="product_layout" AbsoluteLayout.LayoutFlags="All"
