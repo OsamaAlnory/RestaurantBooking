@@ -15,6 +15,8 @@ namespace RestaurantBooking.Pages
     public partial class MenuPage : ContentPage
     {
         private List<IMenuX> cart = new List<IMenuX>();
+        private Restaurant restaurant;
+
 
         public MenuPage()
         {

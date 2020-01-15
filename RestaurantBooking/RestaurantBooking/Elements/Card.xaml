@@ -3,14 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:an="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              x:Class="RestaurantBooking.Elements.Card" CornerRadius="20" Padding="0">
     <StackLayout HeightRequest="200" x:Name="stk">
         <AbsoluteLayout>
-            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
-                <Label Text="This meal is goodi" TextColor="Crimson"/>
+            <StackLayout x:Name="loading_layout" AbsoluteLayout.LayoutFlags="All"
+                         AbsoluteLayout.LayoutBounds="0,0,1,1" BackgroundColor="LightGray">
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <an:AnimationView x:Name="loading_animation" AutoPlay="True"/>
+                    <Label Text="Loading" FontAttributes="Bold" FontSize="25"/>
+                </StackLayout>
             </StackLayout>
-            <Image x:Name="foodImg" Aspect="Fill" AbsoluteLayout.LayoutFlags="All"
+            <StackLayout x:Name="product_layout" AbsoluteLayout.LayoutFlags="All"
+                         AbsoluteLayout.LayoutBounds="0,0,1,1" IsVisible="False">
+                <Image x:Name="foodImg" Aspect="Fill" AbsoluteLayout.LayoutFlags="All"
                    AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+            </StackLayout>
         </AbsoluteLayout>
     </StackLayout>
 </Frame>
