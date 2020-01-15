@@ -56,7 +56,7 @@ namespace RestaurantBooking.Elements
                 clicked = true;
             }
             page.Clicked(new IMenuX { ID = random.Next(10000), MENU = menu});
-            Main.AnimateGrowth(this, 1, 1, "clicked");
+            Main.AnimateGrowth(this, 220, "clicked");
         }
 
         public void OnRecieve(string id)

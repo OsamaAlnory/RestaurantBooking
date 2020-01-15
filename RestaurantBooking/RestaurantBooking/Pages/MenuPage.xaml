@@ -10,7 +10,8 @@
             <BoxView BackgroundColor="Green" CornerRadius="10" HorizontalOptions="StartAndExpand"/>
             <Label Text="Menues" TextColor="Black" HorizontalOptions="CenterAndExpand" FontSize="30"
                    HorizontalTextAlignment="Center"/>
-            <AbsoluteLayout HorizontalOptions="EndAndExpand" x:Name="cartButton">
+            <AbsoluteLayout HorizontalOptions="EndAndExpand" x:Name="cartButton"
+                            sharedTransitions:Transition.Name="test">
                 <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
                     <Frame Padding="0" BorderColor="Blue" CornerRadius="20" HorizontalOptions="Center">
                         <an:AnimationView Animation="cart.json" AutoPlay="False" HeightRequest="40"

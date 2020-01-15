@@ -14,12 +14,14 @@ namespace RestaurantBooking.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuPage : ContentPage
     {
-        private List<IMenuX> cart = new List<IMenuX>();
+        public static List<IMenuX> cart = new List<IMenuX>();
         private Restaurant restaurant;
+        Random random = new Random();
 
 
         public MenuPage()
         {
+            cart.Clear();
             InitializeComponent();
             AddCard("123.jpg");
             AddCard("background.jpg");
@@ -30,7 +32,7 @@ namespace RestaurantBooking.Pages
             tap.Tapped += (s, e) => {
                 if(cart.Count > 0)
                 {
-
+                    Navigation.PushAsync(new PerformShopPage(this));
                 }
             };
             cartButton.GestureRecognizers.Add(tap);
@@ -38,15 +40,29 @@ namespace RestaurantBooking.Pages
 
         private void AddCard(string src)
         {
-            box.Children.Add(new Card(src, this, new IMenu { RestID="RES123", MenuName="Test"}));
+            box.Children.Add(new Card(src, this, new IMenu { RestID="RES123",
+                MenuName ="Test"+random.Next(1000),
+            Price = 20}));
         }
 
         public void Clicked(IMenuX menu)
         {
             cartAnimation.Play();
             cart.Add(menu);
-            bubble_count.Text = "" + cart.Count;
+            RefreshCount();
             if (!bubble.IsVisible)
+            {
+                bubble.IsVisible = true;
+            }
+        }
+
+        public void RefreshCount()
+        {
+            bubble_count.Text = "" + cart.Count;
+            if(cart.Count == 0)
+            {
+                bubble.IsVisible = false;
+            } else
             {
                 bubble.IsVisible = true;
             }

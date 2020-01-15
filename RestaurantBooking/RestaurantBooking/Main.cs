@@ -21,19 +21,18 @@ namespace RestaurantBooking
             return id;
         }
 
-        public static void AnimateGrowth(Taskable taskable, int factor, int speed,
-            string id)
+        public static void AnimateGrowth(Taskable taskable, double factor, string id)
         {
-            Animate(taskable, factor, speed, id, "growth");
+            Animate(taskable, factor, id, "growth");
         }
 
-        private static void Animate(Taskable taskable, int factor, int speed, string id
+        private static void Animate(Taskable taskable, double factor, string id
             , string AnimationType)
         {
             double a = 0;
             bool f = false;
             bool b = false;
-            Device.StartTimer(TimeSpan.FromMilliseconds(20), () =>
+            Device.StartTimer(TimeSpan.FromMilliseconds(10), () =>
             {
                 if (!f)
                 {
@@ -54,7 +53,10 @@ namespace RestaurantBooking
                 if(taskable is View)
                 {
                     View view = (View)taskable;
-                    view.Scale += a / 220;
+                    if(AnimationType == "growth")
+                    {
+                        view.Scale += a / factor;
+                    }
                     if (view.Scale == 1 && b)
                     {
                         taskable.OnRecieve(id);

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Frame xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantBooking.Elements.IItem" HorizontalOptions="FillAndExpand"
+             Padding="10" CornerRadius="10" BorderColor="SkyBlue">
+    <StackLayout Orientation="Horizontal">
+        <Label x:Name="item_info" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"
+               FontSize="17" TextColor="Black"/>
+        <Button Text="Remove" TextColor="Red" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"
+                BackgroundColor="White" BorderColor="LightGray" Clicked="Button_Clicked"/>
+    </StackLayout>
+</Frame>

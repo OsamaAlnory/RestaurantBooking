@@ -11,7 +11,5 @@ namespace RestaurantBooking.Database
         public int TableNr { get; set; }
         public string DisplayName { get; set; }
 
-
-
     }
 }
