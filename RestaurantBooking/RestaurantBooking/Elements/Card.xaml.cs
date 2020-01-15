@@ -1,4 +1,5 @@
 ﻿using RestaurantBooking.Components;
+using RestaurantBooking.Database;
 using RestaurantBooking.Pages;
 using System;
 using System.Collections.Generic;
@@ -14,34 +15,36 @@ namespace RestaurantBooking.Elements
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Card : Frame
     {
+        static Random random = new Random();
+        private IMenu menu;
         MenuPage page;
         public string src;
         bool clicked = false;
 
-        public Card(string src, MenuPage page)
+        public Card(string src, MenuPage page, IMenu menu)
         {
+            this.menu = menu;
             this.src = src;
             this.page = page;
             InitializeComponent();
             foodImg.Source = App.getImage(src);
             TapGestureRecognizer tap = new TapGestureRecognizer();
             tap.Tapped += (s, e) => {
-                page.OnTapped(this);
                 Clicked();
             };
             stk.GestureRecognizers.Add(tap);
         }
 
-        private async void Clicked()
+        private void Clicked()
         {
-            if (clicked)
+            if (clicked || !page.IsClickAllowed())
             {
-
                 return;
             } else
             {
                 clicked = true;
             }
+            page.Clicked(new IMenuX { ID = random.Next(10000), MENU = menu});
             double a = 0;
             bool f = false;
             bool b = false;

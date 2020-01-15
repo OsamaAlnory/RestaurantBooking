@@ -1,4 +1,5 @@
-﻿using RestaurantBooking.Elements;
+﻿using RestaurantBooking.Database;
+using RestaurantBooking.Elements;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace RestaurantBooking.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuPage : ContentPage
     {
+        private List<IMenuX> cart = new List<IMenuX>();
+
         public MenuPage()
         {
             InitializeComponent();
@@ -21,19 +24,54 @@ namespace RestaurantBooking.Pages
             AddCard("background.jpg");
             AddCard("background.jpg");
             AddCard("background.jpg");
-            cart.Source = App.getImage("cart.png");
+            TapGestureRecognizer tap = new TapGestureRecognizer();
+            tap.Tapped += (s, e) => {
+                if(cart.Count > 0)
+                {
+
+                }
+            };
+            cartButton.GestureRecognizers.Add(tap);
         }
 
         private void AddCard(string src)
         {
-            box.Children.Add(new Card(src, this));
+            box.Children.Add(new Card(src, this, new IMenu { RestID="RES123", MenuName="Test"}));
         }
 
-        public void OnTapped(Card card)
+        public void Clicked(IMenuX menu)
         {
-            //DisplayAlert("dawd", "dawd", "dawda");
-            //Navigation.PushAsync(new MealDetails());
+            cartAnimation.Play();
+            cart.Add(menu);
+            bubble_count.Text = "" + cart.Count;
+            if (!bubble.IsVisible)
+            {
+                bubble.IsVisible = true;
+            }
+        }
+
+        public bool IsClickAllowed()
+        {
+            return cart.Count < 99;
+        }
+
+        public void DeleteMenuFromID(int id)
+        {
+            for(int x = 0; x < cart.Count; x++)
+            {
+                if(cart[x].ID == id)
+                {
+                    cart.Remove(cart[x]);
+                }
+            }
         }
 
     }
+
+    public class IMenuX
+    {
+        public int ID { get; set; }
+        public IMenu MENU { get; set; }
+    }
+
 }

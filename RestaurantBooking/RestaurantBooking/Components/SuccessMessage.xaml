@@ -10,5 +10,5 @@
            HorizontalTextAlignment="Center"/>
 
   <Button Style="{StaticResource CustomButton}" BackgroundColor="Purple" TextColor="White"
-            VerticalOptions="EndAndExpand" Text="Okej" Clicked="Button_Clicked"  />
+            VerticalOptions="EndAndExpand" Text="Ok" Clicked="Button_Clicked"  />
 </StackLayout>

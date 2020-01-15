@@ -33,7 +33,7 @@ namespace RestaurantBooking.Pages
                     {
                         if(user.UType == 0)
                         {
-                            Navigation.PushAsync(new RestaurantPage());
+                            Navigation.PushAsync(new RestaurantPage(user));
                         } else if(user.UType == 1)
                         {
                             Navigation.PushAsync(new DisplayPage());

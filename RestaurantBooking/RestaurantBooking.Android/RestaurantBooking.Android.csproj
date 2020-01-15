@@ -35,7 +35,7 @@
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
     <BundleAssemblies>false</BundleAssemblies>
     <MandroidI18n />
-    <IntermediateOutputPath>C:\Users\IBRAHI~1.ALI\AppData\Local\Temp\vsEA33.tmp\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\OSAMA~1.ALN\AppData\Local\Temp\vs47A2.tmp\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,7 +46,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-    <IntermediateOutputPath>C:\Users\IBRAHI~1.ALI\AppData\Local\Temp\vsEA33.tmp\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\OSAMA~1.ALN\AppData\Local\Temp\vs47A2.tmp\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -102,6 +102,7 @@
     <AndroidAsset Include="Assets\error.json" />
     <AndroidAsset Include="Assets\success.json" />
     <AndroidAsset Include="Assets\login-success.json" />
+    <AndroidAsset Include="Assets\cart.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

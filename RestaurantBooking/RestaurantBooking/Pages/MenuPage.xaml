@@ -1,18 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
-             x:Class="RestaurantBooking.Pages.MenuPage">
+             xmlns:an="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="RestaurantBooking.Pages.MenuPage" Title="Restaurant Name">
     <StackLayout>
         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-                     Padding="5">
+                     Padding="7">
             <BoxView BackgroundColor="Green" CornerRadius="10" HorizontalOptions="StartAndExpand"/>
-            <Label Text="Menues" TextColor="Black" HorizontalOptions="CenterAndExpand" FontSize="30"/>
-            <Frame Padding="0" BorderColor="Blue" CornerRadius="20">
-                <Image x:Name="cart" HeightRequest="40"/>
-            </Frame>
+            <Label Text="Menues" TextColor="Black" HorizontalOptions="CenterAndExpand" FontSize="30"
+                   HorizontalTextAlignment="Center"/>
+            <AbsoluteLayout HorizontalOptions="EndAndExpand" x:Name="cartButton">
+                <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                    <Frame Padding="0" BorderColor="Blue" CornerRadius="20" HorizontalOptions="Center">
+                        <an:AnimationView Animation="cart.json" AutoPlay="False" HeightRequest="40"
+                 WidthRequest="40" x:Name="cartAnimation" Speed="0.9"/>
+                    </Frame>
+                </StackLayout>
+                <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"
+                             x:Name="bubble" IsVisible="False">
+                    <Frame Padding="3" CornerRadius="45" HorizontalOptions="EndAndExpand" BorderColor="SkyBlue">
+                        <Label x:Name="bubble_count" TextColor="Red" FontAttributes="Bold"/>
+                    </Frame>
+                </StackLayout>
+            </AbsoluteLayout>
         </StackLayout>
         <ScrollView>
             <StackLayout x:Name="box" Padding="30" Spacing="20">

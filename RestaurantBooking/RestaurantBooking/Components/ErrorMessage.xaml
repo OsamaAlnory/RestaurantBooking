@@ -10,5 +10,5 @@
     <Label x:Name="lbl" HorizontalOptions="CenterAndExpand" FontSize="16"
            HorizontalTextAlignment="Center"/>
     <Button Style="{StaticResource CustomButton}" BackgroundColor="Red"
-            VerticalOptions="EndAndExpand" Text="Avbryt" Clicked="Button_Clicked"/>
+            VerticalOptions="EndAndExpand" Text="Cancel" Clicked="Button_Clicked"/>
 </StackLayout>
