@@ -41,7 +41,7 @@ namespace RestaurantBooking.Pages
                     // "RES123 10"
                     string[] d = res.Split(' ');
                     DisplayAlert("welcome", "Table number is "+d[1]+ " ks", "cancel");
-                    Navigation.PushAsync(new MenuPage());
+                    //Navigation.PushAsync(new MenuPage());
                 } );
             };
             await Navigation.PushAsync(camera);

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
              xmlns:an="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
-             x:Class="RestaurantBooking.Pages.MenuPage" Title="Restaurant Name">
+             x:Class="RestaurantBooking.Pages.MenuPage">
     <StackLayout>
         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                      Padding="7">

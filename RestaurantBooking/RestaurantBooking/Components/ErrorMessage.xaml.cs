@@ -20,6 +20,11 @@ namespace RestaurantBooking.Components
             lbl.Text = message;
 		}
 
+        public bool BackgroundClose()
+        {
+            return true;
+        }
+
         public PopupType GetPopupType()
         {
             return PopupType.INFO;

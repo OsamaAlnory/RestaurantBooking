@@ -5,5 +5,6 @@ namespace RestaurantBooking.Components
     {
         PopupType GetPopupType();
         void OnClosed();
+        bool BackgroundClose();
     }
 }

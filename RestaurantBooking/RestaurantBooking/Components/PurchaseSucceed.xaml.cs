@@ -10,23 +10,22 @@ using Xamarin.Forms.Xaml;
 
 namespace RestaurantBooking.Components
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class SuccessMessage : StackLayout, PopupComponent
-	{
-		public SuccessMessage (string message)
-		{
-			InitializeComponent ();
-            lbl.Text = message;
-		}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class PurchaseSucceed : StackLayout, PopupComponent
+    {
+        public PurchaseSucceed()
+        {
+            InitializeComponent();
+        }
 
         public bool BackgroundClose()
         {
-            return true;
+            return false;
         }
 
         public PopupType GetPopupType()
         {
-            return PopupType.INFO;
+            return PopupType.PURCHASE;
         }
 
         public void OnClosed()

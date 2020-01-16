@@ -11,7 +11,7 @@ using Xamarin.Forms.Xaml;
 
 namespace RestaurantBooking.Components
 {
-    public enum PopupType { INFO,INPUT }
+    public enum PopupType { INFO,INPUT,PURCHASE }
     public partial class Popup : PopupPage
     {
         public PopupType type;
@@ -34,6 +34,9 @@ namespace RestaurantBooking.Components
             } else if(type == PopupType.INPUT)
             {
                 AbsoluteLayout.SetLayoutBounds(frame, new Rectangle(0.5, 0.3, 0.8, 0.6));
+            } else if(type == PopupType.PURCHASE)
+            {
+                AbsoluteLayout.SetLayoutBounds(frame, new Rectangle(0.5, 0.5, 0.8, 0.5));
             }
             if(content is CustomPopup)
             {
@@ -58,6 +61,10 @@ namespace RestaurantBooking.Components
         {
             if (content is PopupComponent)
             {
+                if (!((PopupComponent)content).BackgroundClose())
+                {
+                    return;
+                }
                 ((PopupComponent)content).OnClosed();
             }
             await Navigation.PopPopupAsync();

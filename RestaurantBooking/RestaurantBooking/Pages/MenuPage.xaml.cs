@@ -16,14 +16,16 @@ namespace RestaurantBooking.Pages
     public partial class MenuPage : ContentPage
     {
         public static List<IMenuX> cart = new List<IMenuX>();
-        private Restaurant restaurant;
+        public Restaurant rest;
         Random random = new Random();
 
 
-        public MenuPage()
+        public MenuPage(Restaurant rest)
         {
+            this.rest = rest;
             cart.Clear();
             InitializeComponent();
+            Title = rest.RestName;
             AddCard("123.jpg");
             AddCard("background.jpg");
             AddCard("background.jpg");
@@ -39,7 +41,12 @@ namespace RestaurantBooking.Pages
             cartButton.GestureRecognizers.Add(tap);
             TapGestureRecognizer tap1 = new TapGestureRecognizer();
             tap1.Tapped += (s, e) => {
-                new Popup(new RestaurantDescription(), this).Show();
+                if(string.IsNullOrEmpty(rest.Description) && string.IsNullOrEmpty(rest.Email) &&
+                string.IsNullOrEmpty(rest.Tel))
+                {
+                    return;
+                }
+                new Popup(new RestaurantDescription(rest), this).Show();
             };
             icon_button.GestureRecognizers.Add(tap1);
         }

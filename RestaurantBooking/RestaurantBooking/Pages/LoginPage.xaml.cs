@@ -31,13 +31,7 @@ namespace RestaurantBooking.Pages
                     animation.Play();
                     Device.StartTimer(TimeSpan.FromSeconds(4), () =>
                     {
-                        if(user.UType == 0)
-                        {
-                            Navigation.PushAsync(new RestaurantPage(user));
-                        } else if(user.UType == 1)
-                        {
-                            Navigation.PushAsync(new DisplayPage());
-                        }
+                        Navigation.PushAsync(new RestaurantPage(user));
                         ClosePage();
                         return false;
                     });

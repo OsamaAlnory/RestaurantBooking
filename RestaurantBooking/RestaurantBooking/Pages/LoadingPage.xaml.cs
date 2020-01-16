@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace RestaurantBooking.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DisplayPage : ContentPage
+    public partial class LoadingPage : ContentPage
     {
-        public DisplayPage()
+        public LoadingPage()
         {
             InitializeComponent();
         }

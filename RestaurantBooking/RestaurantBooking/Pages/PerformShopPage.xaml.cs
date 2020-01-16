@@ -1,4 +1,5 @@
-﻿using RestaurantBooking.Database;
+﻿using RestaurantBooking.Components;
+using RestaurantBooking.Database;
 using RestaurantBooking.Elements;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,9 @@ namespace RestaurantBooking.Pages
             this.page = page;
             InitializeComponent();
             background_image.Source = App.getImage("bkg.jpg");
+            table_label.Text = "Table Number is " + page.rest.TableCount;
             Reload();
+            // Meal Status
         }
 
         public void Remove(IMenu menu)
@@ -87,6 +90,7 @@ namespace RestaurantBooking.Pages
                 x++;
             }
             Reservation res = new Reservation { Menues = toString };
+            new Popup(new PurchaseSucceed(), this).Show();
         }
 
     }

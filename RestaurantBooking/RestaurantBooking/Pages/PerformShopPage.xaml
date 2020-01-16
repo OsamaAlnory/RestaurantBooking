@@ -13,6 +13,8 @@
                 </StackLayout>
             </ScrollView>
             <StackLayout VerticalOptions="EndAndExpand">
+                <Label x:Name="table_label" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"
+                       FontSize="24"/>
                 <Label x:Name="total_label" HorizontalOptions="CenterAndExpand"
                    FontAttributes="Bold" FontSize="20"/>
                 <Button HorizontalOptions="FillAndExpand" Text="Proceed To Purchase"

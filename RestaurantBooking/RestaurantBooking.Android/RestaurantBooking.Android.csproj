@@ -35,7 +35,7 @@
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
     <BundleAssemblies>false</BundleAssemblies>
     <MandroidI18n />
-    <IntermediateOutputPath>C:\Users\OSAMA~1.ALN\AppData\Local\Temp\vs55AE.tmp\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\IBRAHI~1.ALI\AppData\Local\Temp\vsEFB5.tmp\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,7 +46,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-    <IntermediateOutputPath>C:\Users\OSAMA~1.ALN\AppData\Local\Temp\vs55AE.tmp\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\IBRAHI~1.ALI\AppData\Local\Temp\vsEFB5.tmp\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />

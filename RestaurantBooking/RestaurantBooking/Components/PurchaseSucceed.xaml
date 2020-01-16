@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:an="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             xmlns:dir="clr-namespace:RestaurantBooking.Components"
+             x:Class="RestaurantBooking.Components.PurchaseSucceed" HorizontalOptions="FillAndExpand"
+             VerticalOptions="FillAndExpand" Spacing="10">
+    <an:AnimationView Animation="success.json" AutoPlay="True" HeightRequest="70"
+     WidthRequest="70" x:Name="animation"/>
+    <Label HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="26"
+           FontAttributes="Bold" Text="Purchase Complete!"/>
+    <Label HorizontalOptions="CenterAndExpand" FontSize="22" FontAttributes="Bold"
+           HorizontalTextAlignment="Center" Text="Name your order"/>
+    <Frame CornerRadius="20" Padding="0" BorderColor="LightBlue" Margin="0,20,0,0">
+        <dir:IEntry Placeholder="Test123" x:Name="orderName" BackgroundColor="White" TextColor="Black" HorizontalTextAlignment="Center"/>
+    </Frame>
+    <Button Style="{StaticResource CustomButton}" BackgroundColor="Purple" TextColor="White"
+            VerticalOptions="EndAndExpand" Text="Finish" Clicked="Button_Clicked"/>
+</StackLayout>

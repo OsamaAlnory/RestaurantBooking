@@ -17,7 +17,9 @@ namespace RestaurantBooking
         public App()
         {
             InitializeComponent();
-            MainPage = new SharedTransitionNavigationPage(new MenuPage());
+            Restaurant res = new Restaurant { RestID = "RES1234", RestName="A7a Rest", TableCount = 14,
+            Tel = "0734904433", Description = "Hello This is shit", Email = "osama@hotmail.com"};
+            MainPage = new SharedTransitionNavigationPage(new MenuPage(res));
             //MainPage = new NavigationPage(new StartPage());
             User.users.Add(new User { RestID = "fuck", Username="Test", Password = "asd", UType =1});
         }
