@@ -1,4 +1,5 @@
-﻿using RestaurantBooking.Database;
+﻿using RestaurantBooking.Components;
+using RestaurantBooking.Database;
 using RestaurantBooking.Elements;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,11 @@ namespace RestaurantBooking.Pages
                 }
             };
             cartButton.GestureRecognizers.Add(tap);
+            TapGestureRecognizer tap1 = new TapGestureRecognizer();
+            tap1.Tapped += (s, e) => {
+                new Popup(new RestaurantDescription(), this).Show();
+            };
+            icon_button.GestureRecognizers.Add(tap1);
         }
 
         private void AddCard(string src)

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantBooking.Components.RestaurantDescription" Spacing="20"
+             VerticalOptions="FillAndExpand">
+    <Label Text="Restaurant Name" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"
+           FontAttributes="Bold" FontSize="24" TextColor="Black"/>
+    <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+        <Label Text="Description: " HorizontalOptions="StartAndExpand"/>
+        <Label Text="Something" HorizontalOptions="EndAndExpand"/>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal">
+        <Label Text="Email" HorizontalOptions="StartAndExpand"/>
+        <Label Text="5ra@6z.fuck" HorizontalOptions="EndAndExpand"/>
+    </StackLayout>
+    <StackLayout Orientation="Horizontal">
+        <Label Text="Telephone Number" HorizontalOptions="StartAndExpand"/>
+        <Label Text="1233215ra113" HorizontalOptions="EndAndExpand"/>
+    </StackLayout>
+    <Button Style="{StaticResource CustomButton}" Text="Close" BackgroundColor="Red"
+            HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"
+            FontAttributes="Bold" Clicked="Button_Clicked"/>
+</StackLayout>
