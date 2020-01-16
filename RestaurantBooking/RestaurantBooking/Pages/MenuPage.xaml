@@ -4,7 +4,7 @@
              xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
              xmlns:an="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              x:Class="RestaurantBooking.Pages.MenuPage">
-    <StackLayout>
+    <StackLayout Padding="10">
         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                      Padding="7">
             <BoxView BackgroundColor="Green" CornerRadius="10" HorizontalOptions="StartAndExpand"
@@ -27,8 +27,12 @@
                 </StackLayout>
             </AbsoluteLayout>
         </StackLayout>
+        <Frame Padding="0" BorderColor="LightBlue" CornerRadius="12">
+            <SearchBar HorizontalOptions="FillAndExpand" Placeholder="Search Product."
+                   x:Name="search"/>
+        </Frame>
         <ScrollView>
-            <StackLayout x:Name="box" Padding="30" Spacing="20">
+            <StackLayout x:Name="box" Padding="20" Spacing="20">
                 
             </StackLayout>
         </ScrollView>

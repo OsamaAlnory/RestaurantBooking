@@ -6,6 +6,7 @@ namespace RestaurantBooking.Database
 {
     public class Reservation
     {
+        public string RestID { get; set; }
         public string ID { get; set; }
         public string Menues { get; set; }
         public int TableNr { get; set; }

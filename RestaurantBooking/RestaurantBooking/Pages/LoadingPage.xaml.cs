@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Plugin.Connectivity;
+using RestaurantBooking.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,26 @@ namespace RestaurantBooking.Pages
         public LoadingPage()
         {
             InitializeComponent();
+            Device.StartTimer(TimeSpan.FromSeconds(2), () => {
+                Check();
+                return false;
+            });
         }
+
+        private void Check()
+        {
+            loading.IsVisible = true;
+            if (CrossConnectivity.Current.IsConnected)
+            {
+                Navigation.PushAsync(new StartPage());
+            } else
+            {
+                loading.IsVisible = false;
+                new Popup(new RetryPopup("No Network Connection!", () => {
+                    Check();
+                }), this).Show();
+            }
+        }
+
     }
 }

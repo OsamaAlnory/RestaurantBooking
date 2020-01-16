@@ -23,7 +23,7 @@ namespace RestaurantBooking.Pages
             this.page = page;
             InitializeComponent();
             background_image.Source = App.getImage("bkg.jpg");
-            table_label.Text = "Table Number is " + page.rest.TableCount;
+            table_label.Text = "Table Number is " + page.tableNumber;
             Reload();
             // Meal Status
         }
@@ -89,8 +89,9 @@ namespace RestaurantBooking.Pages
                 toString += menu.MenuName + "," + menues[menu];
                 x++;
             }
-            Reservation res = new Reservation { Menues = toString };
-            new Popup(new PurchaseSucceed(), this).Show();
+            Reservation res = new Reservation { Menues = toString, ID=App.rnd(1000,9999)+""
+            , TableNr = page.tableNumber, RestID = page.rest.RestID};
+            new Popup(new PurchaseSucceed(res), this).Show();
         }
 
     }

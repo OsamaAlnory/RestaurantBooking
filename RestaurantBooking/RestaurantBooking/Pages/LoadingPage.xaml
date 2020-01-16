@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RestaurantBooking.Pages.LoadingPage">
+             xmlns:an="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="RestaurantBooking.Pages.LoadingPage" BackgroundColor="Green">
     <StackLayout VerticalOptions="CenterAndExpand">
-        <Label Text="Loading"/>
-        
+        <Label Text="Loading" HorizontalOptions="CenterAndExpand"
+               FontAttributes="Bold" FontSize="24" TextColor="White"/>
+        <an:AnimationView x:Name="loading" Loop="True" AutoPlay="True" IsVisible="False"
+         Animation="loading.json" HeightRequest="50" WidthRequest="50"/>
     </StackLayout>
 </ContentPage>

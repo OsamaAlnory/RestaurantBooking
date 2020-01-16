@@ -1,4 +1,5 @@
-﻿using Rg.Plugins.Popup.Extensions;
+﻿using RestaurantBooking.Database;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,14 @@ namespace RestaurantBooking.Components
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PurchaseSucceed : StackLayout, PopupComponent
     {
-        public PurchaseSucceed()
+        private Reservation res;
+
+        public PurchaseSucceed(Reservation res)
         {
+            this.res = res;
             InitializeComponent();
+            orderId.Text = "Order number is "+res.ID;
+            orderName.Placeholder = "Test" + App.rnd(1, 999);
         }
 
         public bool BackgroundClose()
@@ -35,6 +41,9 @@ namespace RestaurantBooking.Components
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            res.DisplayName = string.IsNullOrEmpty(orderName.Text) ? orderName.Text :
+                orderName.Placeholder;
+            // Send
             OnClosed();
             await Navigation.PopPopupAsync();
         }

@@ -17,20 +17,22 @@ namespace RestaurantBooking.Pages
     {
         public static List<IMenuX> cart = new List<IMenuX>();
         public Restaurant rest;
-        Random random = new Random();
+        public int tableNumber;
+        private List<IMenu> menues = new List<IMenu>();
 
 
-        public MenuPage(Restaurant rest)
+        public MenuPage(Restaurant rest, int tableNumber)
         {
             this.rest = rest;
+            this.tableNumber = tableNumber;
             cart.Clear();
             InitializeComponent();
             Title = rest.RestName;
-            AddCard("123.jpg");
-            AddCard("background.jpg");
-            AddCard("background.jpg");
-            AddCard("background.jpg");
-            AddCard("background.jpg");
+            for(int x = 0; x < 5; x++)
+            {
+                menues.Add(new IMenu { RestID = "RES123", MenuName = "Test" + App.rnd(1, 100)
+                , Price = App.rnd(1, 10)*5});
+            }
             TapGestureRecognizer tap = new TapGestureRecognizer();
             tap.Tapped += (s, e) => {
                 if(cart.Count > 0)
@@ -49,13 +51,31 @@ namespace RestaurantBooking.Pages
                 new Popup(new RestaurantDescription(rest), this).Show();
             };
             icon_button.GestureRecognizers.Add(tap1);
+            search.SearchCommand = new Command(OnSearch);
+            OnSearch();
         }
 
-        private void AddCard(string src)
+        private void OnSearch()
         {
-            box.Children.Add(new Card(src, this, new IMenu { RestID="RES123",
-                MenuName ="Test"+random.Next(1000),
-            Price = 20}));
+            box.Children.Clear();
+            for(int x = 0; x < menues.Count; x++)
+            {
+                if (string.IsNullOrEmpty(search.Text))
+                {
+                    AddCard(menues[x]);
+                } else
+                {
+                    if (menues[x].MenuName.StartsWith(search.Text))
+                    {
+                        AddCard(menues[x]);
+                    }
+                }
+            }
+        }
+
+        private void AddCard(IMenu m)
+        {
+            box.Children.Add(new Card("123.jpg", this, m));
         }
 
         public void Clicked(IMenuX menu)
