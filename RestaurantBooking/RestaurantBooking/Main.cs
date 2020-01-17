@@ -14,11 +14,24 @@ namespace RestaurantBooking
         private static List<Restaurant> rest = new List<Restaurant>();
         static Random random = new Random();
 
+
         public static string GenerateId()
         {
             string id = "RES";
             id += random.Next(1000, 9999);
             return id;
+        }
+
+        public static Restaurant GetRestaurantByUser(User user)
+        {
+            for(int x = 0; x < rest.Count; x++)
+            {
+                if(rest[x].RestID == user.RestID)
+                {
+                    return rest[x];
+                }
+            }
+            return null;
         }
 
         public static void AnimateGrowth(Taskable taskable, double factor, string id)

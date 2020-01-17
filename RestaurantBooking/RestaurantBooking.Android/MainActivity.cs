@@ -7,6 +7,9 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Plugin.CurrentActivity;
+using Android.Support.V4.App;
+using Android.Support.V4.Content;
+using Android;
 
 namespace RestaurantBooking.Droid
 {
@@ -28,6 +31,19 @@ namespace RestaurantBooking.Droid
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
         {
             Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+            if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.Camera) != Permission.Granted)
+            {
+                ActivityCompat.RequestPermissions(this, new String[] { Manifest.Permission.Camera }, 0);
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("Permission Granted!");
+            }
         }
 
     }

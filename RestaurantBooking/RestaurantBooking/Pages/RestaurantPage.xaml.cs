@@ -13,15 +13,32 @@ namespace RestaurantBooking.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RestaurantPage : TabbedPage
     {
-        private User user;
+        private Restaurant rest;
 
-        public RestaurantPage(User loggedInAs)
+        public RestaurantPage(Restaurant rest, bool isDisplay)
         {
-            this.user = loggedInAs;
+            this.rest = rest;
             InitializeComponent();
             qr.BarcodeOptions.Width = 1000;
             qr.BarcodeOptions.Height = 1000;
-            qr.BarcodeValue = Main.GenerateId()+" 10";
+            for(int x = 0; x < rest.TableCount; x++)
+            {
+                picker.Items.Add(x+1+"");
+            }
+            picker.SelectedIndex = 0;
+            SetQR();
         }
+
+        private void SetQR()
+        {
+            qr.BarcodeValue = rest.RestID + " " + picker.Items[picker.SelectedIndex];
+        }
+
+        // QR Show button
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            SetQR();
+        }
+
     }
 }

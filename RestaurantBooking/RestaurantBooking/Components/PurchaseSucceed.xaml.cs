@@ -1,11 +1,12 @@
 ﻿using RestaurantBooking.Database;
+using RestaurantBooking.Pages;
 using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -43,6 +44,31 @@ namespace RestaurantBooking.Components
         {
             res.DisplayName = string.IsNullOrEmpty(orderName.Text) ? orderName.Text :
                 orderName.Placeholder;
+            Navigation.PushAsync(new OrderDisplayPage());
+            /*
+            try
+            {
+
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                mail.From = new MailAddress("hbgtestare@outlook.com");
+                mail.To.Add("osama-alnori@outlook.com");
+                mail.Subject = "Test";
+                mail.Body = "Hello";
+                SmtpServer.Port = 587;
+                SmtpServer.Host = "smtp.gmail.com";
+                SmtpServer.EnableSsl = true;
+                SmtpServer.UseDefaultCredentials = false;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("hbgtestare@outlook.com", "hbghbg123");
+                SmtpServer.Send(mail);
+            }
+            catch (Exception ex)
+            {
+                orderId.Text = ex.Message;
+                return;
+            }
+            */
             // Send
             OnClosed();
             await Navigation.PopPopupAsync();

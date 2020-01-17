@@ -4,12 +4,25 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:qrc="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
-             x:Class="RestaurantBooking.Pages.RestaurantPage">
+             x:Class="RestaurantBooking.Pages.RestaurantPage" BackgroundColor="Green">
     <ContentPage Title="Menues">
         
     </ContentPage>
-    <ContentPage Title="QR">
-        <qrc:ZXingBarcodeImageView x:Name="qr" AutomationId="Restaurant" HorizontalOptions="FillAndExpand" 
-     VerticalOptions="FillAndExpand" BarcodeFormat="QR_CODE"/>
+    <ContentPage Title="Reservations">
+        
     </ContentPage>
+    <ContentPage Title="QR">
+        <StackLayout>
+            <Label Text="Table Number"/>
+            <Picker x:Name="picker"/>
+            <qrc:ZXingBarcodeImageView x:Name="qr" AutomationId="Restaurant" HorizontalOptions="FillAndExpand" 
+     VerticalOptions="FillAndExpand" BarcodeFormat="QR_CODE"/>
+            <Button VerticalOptions="EndAndExpand" Style="{StaticResource CustomButton}"
+                    Text="Show Code" BackgroundColor="Purple" FontAttributes="Bold"
+                    Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage>
+    <!--<ContentPage Title="Settings">
+        
+    </ContentPage>-->
 </TabbedPage>

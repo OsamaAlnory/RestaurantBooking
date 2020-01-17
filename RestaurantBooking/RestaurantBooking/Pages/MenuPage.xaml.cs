@@ -26,6 +26,9 @@ namespace RestaurantBooking.Pages
             this.rest = rest;
             this.tableNumber = tableNumber;
             cart.Clear();
+            // Load Icon From Database
+            // Load menues From Database
+            // 
             InitializeComponent();
             Title = rest.RestName;
             for(int x = 0; x < 5; x++)

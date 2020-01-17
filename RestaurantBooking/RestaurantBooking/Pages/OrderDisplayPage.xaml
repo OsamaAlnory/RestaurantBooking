@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:an="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="RestaurantBooking.Pages.OrderDisplayPage" BackgroundColor="Purple"
+             Padding="10">
+    <StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label x:Name="orderNumber" HorizontalOptions="CenterAndExpand"
+                   TextColor="White" FontAttributes="Bold" FontSize="30"/>
+            <Label x:Name="orderStatus" HorizontalOptions="CenterAndExpand"
+                   TextColor="White" FontSize="22"/>
+            <an:AnimationView x:Name="animation" AutoPlay="True" HeightRequest="100"
+             Loop="True" Animation="food.json" WidthRequest="100"/>
+        </StackLayout>
+        <Button Text="Close" Style="{StaticResource CustomButton}" FontAttributes="Bold"
+                VerticalOptions="EndAndExpand" BackgroundColor="Crimson" Clicked="Button_Clicked"/>
+    </StackLayout>
+</ContentPage>

@@ -111,6 +111,7 @@
     <AndroidAsset Include="Assets\cart.json" />
     <AndroidAsset Include="Assets\loading-product.json" />
     <AndroidAsset Include="Assets\loading.json" />
+    <AndroidAsset Include="Assets\food.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
