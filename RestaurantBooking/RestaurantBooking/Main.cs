@@ -9,6 +9,7 @@ namespace RestaurantBooking
 {
     public class Main
     {
+        private static char[] IM = { 'a', 'b', 'c', 'd', 'e', 'f', 'g'};
         private static List<IMenu> menu = new List<IMenu>();
         private static List<Reservation> resv = new List<Reservation>();
         private static List<Restaurant> rest = new List<Restaurant>();
@@ -19,6 +20,16 @@ namespace RestaurantBooking
         {
             string id = "RES";
             id += random.Next(1000, 9999);
+            return id;
+        }
+
+        public static string GenerateRandomImageId()
+        {
+            string id = "";
+            for(int x = 0; x < 7; x++)
+            {
+                id += IM[random.Next(IM.Length)];
+            }
             return id;
         }
 

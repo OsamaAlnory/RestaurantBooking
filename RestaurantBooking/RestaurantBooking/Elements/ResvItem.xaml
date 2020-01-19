@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantBooking.Elements.ResvItem" Padding="10">
+    <!-- Visible Row -->
+    <StackLayout Orientation="Horizontal">
+        <Label x:Name="orderId"/>
+        <Label x:Name="orderName"/>
+    </StackLayout>
+    
+    <!-- Show On Click -->
+    <StackLayout x:Name="menues_layout" IsVisible="False" Orientation="Horizontal">
+        <Label x:Name="menues" HorizontalOptions="StartAndExpand"/>
+        <Button HorizontalOptions="EndAndExpand" Style="{StaticResource CustomButton}"
+                Text="Done" Clicked="Button_Clicked"/>
+    </StackLayout>
+</StackLayout>

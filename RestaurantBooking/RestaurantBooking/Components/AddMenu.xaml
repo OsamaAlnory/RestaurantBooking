@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dir="clr-namespace:RestaurantBooking.Components"
+             x:Class="RestaurantBooking.Components.AddMenu" HorizontalOptions="FillAndExpand"
+             VerticalOptions="FillAndExpand">
+    <!-- Image -->
+    <Button Text="Click Here to Choose Image From Library" Clicked="Button_Clicked_1"/>
+    <dir:IEntry Placeholder="Menu Name" x:Name="menu_name"/>
+    <dir:IEntry Placeholder="Price" x:Name="menu_price"/>
+    <dir:IEntry Placeholder="Description" x:Name="menu_desc"/>
+    <Button Text="Click To Add" Clicked="Button_Clicked"/>
+    <!-- Loading Animation -->
+</StackLayout>

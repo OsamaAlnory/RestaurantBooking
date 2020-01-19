@@ -27,6 +27,7 @@ namespace RestaurantBooking.Pages
             }
             picker.SelectedIndex = 0;
             SetQR();
+            // Reload Reservations every 5 secs.
         }
 
         private void SetQR()
@@ -40,5 +41,11 @@ namespace RestaurantBooking.Pages
             SetQR();
         }
 
+        // Add Menu button
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            // Open Popup with inputs
+
+        }
     }
 }

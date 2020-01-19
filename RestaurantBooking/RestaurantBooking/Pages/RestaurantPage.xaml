@@ -1,15 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:qrc="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
-             x:Class="RestaurantBooking.Pages.RestaurantPage" BackgroundColor="Green">
-    <ContentPage Title="Menues">
-        
-    </ContentPage>
+             x:Class="RestaurantBooking.Pages.RestaurantPage" BackgroundColor="SkyBlue">
     <ContentPage Title="Reservations">
-        
+        <StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Menues">
+        <StackLayout Padding="12">
+            <!-- List of menues -->
+            <ScrollView>
+                <StackLayout>
+                    
+                </StackLayout>
+            </ScrollView>
+            <Button Text="Add Menu" Style="{StaticResource CustomButton}"
+                    VerticalOptions="EndAndExpand" Clicked="Button_Clicked_1"/>
+        </StackLayout>
     </ContentPage>
     <ContentPage Title="QR">
         <StackLayout>
@@ -17,6 +30,7 @@
             <Picker x:Name="picker"/>
             <qrc:ZXingBarcodeImageView x:Name="qr" AutomationId="Restaurant" HorizontalOptions="FillAndExpand" 
      VerticalOptions="FillAndExpand" BarcodeFormat="QR_CODE"/>
+            <!-- Picker add chooseable reservation status? -->
             <Button VerticalOptions="EndAndExpand" Style="{StaticResource CustomButton}"
                     Text="Show Code" BackgroundColor="Purple" FontAttributes="Bold"
                     Clicked="Button_Clicked"/>

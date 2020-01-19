@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RestaurantBooking.Database
 {
-    public class Image
+    public class IImage
     {
         public string ID { get; set; }
         public byte[] Data { get; set; }

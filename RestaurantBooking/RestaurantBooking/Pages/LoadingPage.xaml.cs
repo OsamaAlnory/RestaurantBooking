@@ -1,5 +1,6 @@
 ﻿using Plugin.Connectivity;
 using RestaurantBooking.Components;
+using RestaurantBooking.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,13 +15,26 @@ namespace RestaurantBooking.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoadingPage : ContentPage
     {
-        public LoadingPage()
+        private int type = 0;
+        private object[] args;
+
+        public LoadingPage(int type, params object[] args)
         {
+            this.type = type;
+            this.args = args;
             InitializeComponent();
-            Device.StartTimer(TimeSpan.FromSeconds(2), () => {
+            if (type == 0)
+            {
+                Device.StartTimer(TimeSpan.FromSeconds(2), () =>
+                {
+                    Check();
+                    return false;
+                });
+            } else if(type == 1)
+            {
+                this.BackgroundColor = Color.Red;
                 Check();
-                return false;
-            });
+            }
         }
 
         private void Check()
@@ -28,7 +42,18 @@ namespace RestaurantBooking.Pages
             loading.IsVisible = true;
             if (CrossConnectivity.Current.IsConnected)
             {
-                Navigation.PushAsync(new StartPage());
+                if(type == 0)
+                {
+                    // await Load Users
+                    // await Load Restaurants
+                    Navigation.PushAsync(new StartPage());
+                } else if(type == 1)
+                {
+                    // await Load Menues
+                    // await Load Reservations
+                    Navigation.PushAsync(new RestaurantPage(args[0] as Restaurant, 
+                        args[1].ToString().ToLower() == "true"));
+                }
             } else
             {
                 loading.IsVisible = false;
