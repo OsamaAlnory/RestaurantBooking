@@ -15,50 +15,49 @@ namespace RestaurantBooking.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoadingPage : ContentPage
     {
-        private int type = 0;
-        private object[] args;
+        private Task action;
+        private object[] o;
 
-        public LoadingPage(int type, params object[] args)
+        public LoadingPage(string pageName, int waitTime, Task action, params object[] o)
         {
-            this.type = type;
-            this.args = args;
+            this.action = action;
             InitializeComponent();
-            if (type == 0)
+            Device.StartTimer(TimeSpan.FromSeconds(waitTime), () =>
             {
-                Device.StartTimer(TimeSpan.FromSeconds(2), () =>
-                {
-                    Check();
-                    return false;
-                });
-            } else if(type == 1)
-            {
-                this.BackgroundColor = Color.Red;
-                Check();
-            }
+                Check(pageName, o);
+                return false;
+            });
         }
 
-        private void Check()
+        private async void Check(string pageName, params object[] o)
         {
             loading.IsVisible = true;
             if (CrossConnectivity.Current.IsConnected)
             {
-                if(type == 0)
+                if (action != null)
                 {
-                    // await Load Users
-                    // await Load Restaurants
-                    Navigation.PushAsync(new StartPage());
-                } else if(type == 1)
-                {
-                    // await Load Menues
-                    // await Load Reservations
-                    Navigation.PushAsync(new RestaurantPage(args[0] as Restaurant, 
-                        args[1].ToString().ToLower() == "true"));
+                    await Task.Run(() => action);
                 }
+                Page page = null;
+                if(pageName == "StartPage")
+                {
+                    page = new StartPage();
+                } else if(pageName == "RestaurantPage")
+                {
+                    var user = o[0] as User;
+                    page = new RestaurantPage(Main.GetRestaurantByUser(user), 
+                        user.UType == "display");
+                } else if(pageName == "MenuPage")
+                {
+                    var rest = o[0] as Restaurant;
+                    page = new MenuPage(rest, int.Parse(o[1].ToString()));
+                }
+                Navigation.PushAsync(page);
             } else
             {
                 loading.IsVisible = false;
                 new Popup(new RetryPopup("No Network Connection!", () => {
-                    Check();
+                    Check(pageName);
                 }), this).Show();
             }
         }

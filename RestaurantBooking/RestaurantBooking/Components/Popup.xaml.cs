@@ -36,7 +36,7 @@ namespace RestaurantBooking.Components
                 AbsoluteLayout.SetLayoutBounds(frame, new Rectangle(0.5, 0.3, 0.8, 0.6));
             } else if(type == PopupType.PURCHASE)
             {
-                AbsoluteLayout.SetLayoutBounds(frame, new Rectangle(0.5, 0.5, 0.8, 0.5));
+                AbsoluteLayout.SetLayoutBounds(frame, new Rectangle(0.5, 0.5, 0.8, 0.6));
             }
             if(content is CustomPopup)
             {

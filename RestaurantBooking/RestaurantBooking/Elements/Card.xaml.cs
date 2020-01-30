@@ -18,14 +18,12 @@ namespace RestaurantBooking.Elements
         static Random random = new Random();
         private IMenu menu;
         MenuPage page;
-        public string src;
         bool clicked = false;
         bool isLoading = true;
 
-        public Card(string src, MenuPage page, IMenu menu)
+        public Card(MenuPage page, IMenu menu)
         {
             this.menu = menu;
-            this.src = src;
             this.page = page;
             InitializeComponent();
             TapGestureRecognizer tap = new TapGestureRecognizer();
@@ -36,10 +34,16 @@ namespace RestaurantBooking.Elements
             LoadImage();
         }
 
-        private void LoadImage()
+        private async void LoadImage()
         {
-            foodImg.Source = App.getImage(src);
-            //
+            var img = await Main.LoadImage(menu.MenuImage);
+            if(img != null)
+            {
+                foodImg.Source = App.ByteToImage(img.Data);
+            } else
+            {
+                foodImg.Source = App.getImage("no-image.png");
+            }
             loading_animation.Pause();
             loading_layout.IsVisible = false;
             product_layout.IsVisible = true;

@@ -1,4 +1,5 @@
 ﻿using RestaurantBooking.Database;
+using RestaurantBooking.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,20 +12,26 @@ using Xamarin.Forms.Xaml;
 namespace RestaurantBooking.Elements
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ResvItem : StackLayout
+	public partial class ResvItem : Frame
 	{
+        private RestaurantPage page;
+        private Reservation resv;
+        private bool Loading;
 
-		public ResvItem (Reservation resv)
+		public ResvItem (Reservation resv, RestaurantPage page)
 		{
+            this.page = page;
+            this.resv = resv;
 			InitializeComponent ();
             TapGestureRecognizer tap = new TapGestureRecognizer();
             tap.Tapped += (s, e) => {
                 menues_layout.IsVisible = !menues_layout.IsVisible;
             };
+            this.GestureRecognizers.Add(tap);
             orderId.Text = resv.ID;
             orderName.Text = resv.DisplayName;
             string label = "";
-            string[] d = resv.Menues.Split(';');
+            string[] d = resv.Menus.Split(';');
             foreach(string a in d)
             {
                 string[] b = a.Split(',');
@@ -33,10 +40,26 @@ namespace RestaurantBooking.Elements
             menues.Text = label;
 		}
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            // Remove Resv
+            if (Loading)
+            {
+                return;
+            }
+            Loading = true;
+            if(resv.Status == null)
+            {
+                button.BackgroundColor = Color.Crimson;
+                button.Text = "Remove";
+                resv = await Main.ChangeStatus(resv.ID, "Done");
+            } else
+            {
+                await Main.RemoveResv(resv);
+                page.RefreshResv();
+            }
+            Loading = false;
         }
+
 
     }
 }

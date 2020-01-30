@@ -4,11 +4,12 @@
              xmlns:dir="clr-namespace:RestaurantBooking.Components"
              x:Class="RestaurantBooking.Components.AddMenu" HorizontalOptions="FillAndExpand"
              VerticalOptions="FillAndExpand">
-    <!-- Image -->
-    <Button Text="Click Here to Choose Image From Library" Clicked="Button_Clicked_1"/>
+    <Image x:Name="menu_image" HeightRequest="50"/>
     <dir:IEntry Placeholder="Menu Name" x:Name="menu_name"/>
     <dir:IEntry Placeholder="Price" x:Name="menu_price"/>
     <dir:IEntry Placeholder="Description" x:Name="menu_desc"/>
-    <Button Text="Click To Add" Clicked="Button_Clicked"/>
+    <Button Text="Click To Add" Clicked="Button_Clicked" VerticalOptions="EndAndExpand"
+            BackgroundColor="Green" Style="{StaticResource CustomButton}"/>
+    
     <!-- Loading Animation -->
 </StackLayout>

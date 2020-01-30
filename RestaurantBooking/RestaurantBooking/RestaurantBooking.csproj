@@ -11,37 +11,48 @@
 
   <ItemGroup>
     <None Remove="Images\123.jpg" />
+    <None Remove="Images\b.jpg" />
     <None Remove="Images\background.jpg" />
     <None Remove="Images\bkg.jpg" />
     <None Remove="Images\cart.png" />
+    <None Remove="Images\info.png" />
     <None Remove="Images\main-icon.png" />
+    <None Remove="Images\no-image.png" />
     <None Remove="Images\qr.png" />
-    <None Remove="Images\qr1.png" />
     <None Remove="Images\qrcode.png" />
-    <None Remove="Images\title.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Images\123.jpg" />
+    <EmbeddedResource Include="Images\b.jpg" />
     <EmbeddedResource Include="Images\bkg.jpg" />
     <EmbeddedResource Include="Images\cart.png" />
+    <EmbeddedResource Include="Images\info.png" />
     <EmbeddedResource Include="Images\main-icon.png" />
+    <EmbeddedResource Include="Images\no-image.png" />
     <EmbeddedResource Include="Images\qrcode.png" />
-    <EmbeddedResource Include="Images\title.png" />
     <EmbeddedResource Include="Images\background.jpg" />
     <EmbeddedResource Include="Images\qr.png" />
-    <EmbeddedResource Include="Images\qr1.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.5.4" />
+    <PackageReference Include="EntityFramework" Version="6.4.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.1.4.168" />
+    <PackageReference Include="SendGrid" Version="9.12.5" />
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
     <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
     <PackageReference Include="Xamarin.Forms" Version="4.4.0.991477" />
     <PackageReference Include="Xamarin.Plugin.SharedTransitions" Version="2.0.2" />
     <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />
     <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Elements\IMenuItem.xaml.cs">
+      <DependentUpon>IMenuItem.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -60,7 +71,7 @@
     <EmbeddedResource Update="Elements\IItem.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Elements\MenuItem.xaml">
+    <EmbeddedResource Update="Elements\IMenuItem.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Elements\ResvItem.xaml">

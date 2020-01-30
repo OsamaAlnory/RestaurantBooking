@@ -14,6 +14,7 @@ namespace RestaurantBooking.Database
         public string Tel { get; set; }
         public string LayoutDesign { get; set; }
         public string Description { get; set; }
+        public string StatusList { get; set; }
 
 
     }

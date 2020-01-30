@@ -26,16 +26,10 @@ namespace RestaurantBooking.Pages
             this.rest = rest;
             this.tableNumber = tableNumber;
             cart.Clear();
-            // Load Icon From Database
-            // Load menues From Database
-            // 
             InitializeComponent();
             Title = rest.RestName;
-            for(int x = 0; x < 5; x++)
-            {
-                menues.Add(new IMenu { RestID = "RES123", MenuName = "Test" + App.rnd(1, 100)
-                , Price = App.rnd(1, 10)*5});
-            }
+            icon_button.Source = App.getImage("info.png");
+            menues = Main.menu;
             TapGestureRecognizer tap = new TapGestureRecognizer();
             tap.Tapped += (s, e) => {
                 if(cart.Count > 0)
@@ -51,11 +45,19 @@ namespace RestaurantBooking.Pages
                 {
                     return;
                 }
-                new Popup(new RestaurantDescription(rest), this).Show();
+                //new Popup(new RestaurantDescription(rest), this).Show();
             };
             icon_button.GestureRecognizers.Add(tap1);
             search.SearchCommand = new Command(OnSearch);
             OnSearch();
+            LoadIcon();
+        }
+
+        private void LoadIcon()
+        {
+            icon_button.Source = App.getImage("no-image.png");
+            //var icon = await Main.LoadImage(rest.RestID + "" + rest.Icon);
+            //icon_button.Source = App.ByteToImage(icon.Data);
         }
 
         private void OnSearch()
@@ -68,7 +70,7 @@ namespace RestaurantBooking.Pages
                     AddCard(menues[x]);
                 } else
                 {
-                    if (menues[x].MenuName.StartsWith(search.Text))
+                    if (menues[x].MenuName.Contains(search.Text))
                     {
                         AddCard(menues[x]);
                     }
@@ -78,7 +80,7 @@ namespace RestaurantBooking.Pages
 
         private void AddCard(IMenu m)
         {
-            box.Children.Add(new Card("123.jpg", this, m));
+            box.Children.Add(new Card(this, m));
         }
 
         public void Clicked(IMenuX menu)

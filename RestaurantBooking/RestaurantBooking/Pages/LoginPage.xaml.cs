@@ -24,14 +24,15 @@ namespace RestaurantBooking.Pages
             string u1 = uname.Text, p1 = password.Text;
             if(!(string.IsNullOrEmpty(u1) || string.IsNullOrEmpty(p1)))
             {
-                User user = User.GetUserByName(u1);
+                User user = Main.GetUserByName(u1);
                 if(user != null && user.Password == p1)
                 {
                     animation.IsVisible = true;
                     animation.Play();
                     Device.StartTimer(TimeSpan.FromSeconds(4), () =>
                     {
-                        App.OpenLoading(this, 1, Main.GetRestaurantByUser(user), user.UType==1);
+                    App.OpenLoading(this, "RestaurantPage", 1, 
+                        Main.LoadAdmin(Main.GetRestaurantByUser(user)), user);
                         ClosePage();
                         return false;
                     });
@@ -47,7 +48,7 @@ namespace RestaurantBooking.Pages
 
         private void ClosePage()
         {
-            
+            Navigation.RemovePage(this);
         }
 
 

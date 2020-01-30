@@ -4,11 +4,20 @@
              xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
              xmlns:an="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              x:Class="RestaurantBooking.Pages.MenuPage">
+    <!--
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" Padding="5">
+            <Image x:Name="icon" HorizontalOptions="EndAndExpand" Margin="0,0,10,0"
+                   HeightRequest="50" WidthRequest="50"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    -->
     <StackLayout Padding="10">
         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                      Padding="7">
-            <BoxView BackgroundColor="Green" CornerRadius="10" HorizontalOptions="StartAndExpand"
-                     x:Name="icon_button"/>
+            <Frame CornerRadius="12" Padding="0">
+                <Image x:Name="icon_button" HeightRequest="40" WidthRequest="40"/>
+            </Frame>
             <Label Text="Menues" TextColor="Black" HorizontalOptions="CenterAndExpand" FontSize="30"
                    HorizontalTextAlignment="Center"/>
             <AbsoluteLayout HorizontalOptions="EndAndExpand" x:Name="cartButton"

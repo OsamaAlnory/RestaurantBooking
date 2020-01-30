@@ -17,6 +17,7 @@ namespace RestaurantBooking.Pages
     {
         private Dictionary<IMenu, int> menues = new Dictionary<IMenu, int>();
         private MenuPage page;
+        private double price;
 
         public PerformShopPage(MenuPage page)
         {
@@ -25,7 +26,6 @@ namespace RestaurantBooking.Pages
             background_image.Source = App.getImage("bkg.jpg");
             table_label.Text = "Table Number is " + page.tableNumber;
             Reload();
-            // Meal Status
         }
 
         public void Remove(IMenu menu)
@@ -60,6 +60,7 @@ namespace RestaurantBooking.Pages
                 }
                 total += menu.MENU.Price;
             }
+            price = total;
             foreach(IMenu menu in menues.Keys)
             {
                 layout.Children.Add(new IItem(menu, menues[menu], this));
@@ -89,9 +90,9 @@ namespace RestaurantBooking.Pages
                 toString += menu.MenuName + "," + menues[menu];
                 x++;
             }
-            Reservation res = new Reservation { Menues = toString, ID=App.rnd(1000,9999)+""
+            Reservation res = new Reservation { Menus = toString, ID=App.rnd(1000,9999)+""
             , TableNr = page.tableNumber, RestID = page.rest.RestID};
-            new Popup(new PurchaseSucceed(res), this).Show();
+            new Popup(new PurchaseSucceed(res, price), this).Show();
         }
 
     }

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantBooking.Elements.IMenuItem" Orientation="Horizontal"
+             Spacing="10">
+    <Image HeightRequest="60" WidthRequest="60" x:Name="icon"/>
+    <Label x:Name="menu_name" VerticalOptions="CenterAndExpand" FontSize="22"
+           FontAttributes="Bold"/>
+    <Label x:Name="menu_price" VerticalOptions="CenterAndExpand" FontSize="22"
+           FontAttributes="Bold"/>
+    <Button Text="Delete" HorizontalOptions="EndAndExpand" Clicked="Button_Clicked"
+            BackgroundColor="Red" TextColor="White" Margin="0,5,0,5"/>
+</StackLayout>

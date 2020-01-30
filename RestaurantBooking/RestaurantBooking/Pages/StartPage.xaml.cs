@@ -25,7 +25,6 @@ namespace RestaurantBooking.Pages
                 Camera();
             };
             button.GestureRecognizers.Add(tap);
-            
 		}
           
         public async void Camera()
@@ -38,18 +37,19 @@ namespace RestaurantBooking.Pages
                 {
                     Navigation.PopAsync();
                     string res = result.ToString();
-                    // "RES123 10"
                     string[] d = res.Split(' ');
-                    DisplayAlert("welcome", "Table number is "+d[1]+ " ks", "cancel");
-                    //Navigation.PushAsync(new MenuPage());
+                    var x = Main.GetRestaurantById(d[0]);
+                    if(x != null)
+                    {
+                        App.OpenLoading(this, "MenuPage", 1, Main.LoadMenus(x), x, d[1]);
+                    } else
+                    {
+                        new Popup(new ErrorMessage("Could not recognize this restaurant!"), this)
+                        .Show();
+                    }
                 } );
             };
             await Navigation.PushAsync(camera);
-        }
-
-        private void Clicked(object sender, EventArgs e)
-        {
-            DisplayAlert("cs", "kos", "cos");
         }
 
         private void Button_Clicked(object sender, EventArgs e)

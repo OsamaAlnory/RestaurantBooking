@@ -1,17 +1,20 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<StackLayout xmlns="http://xamarin.com/schemas/2014/forms" 
+<Frame xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RestaurantBooking.Elements.ResvItem" Padding="10">
-    <!-- Visible Row -->
-    <StackLayout Orientation="Horizontal">
-        <Label x:Name="orderId"/>
-        <Label x:Name="orderName"/>
+             x:Class="RestaurantBooking.Elements.ResvItem" Padding="2" BorderColor="LightBlue">
+    <StackLayout Padding="8">
+        <!-- Visible Row -->
+        <StackLayout Orientation="Horizontal">
+            <Label x:Name="orderId" TextColor="Black" FontSize="24"/>
+            <Label x:Name="orderName" TextColor="Black" FontSize="24"/>
+        </StackLayout>
+
+        <!-- Show On Click -->
+        <StackLayout x:Name="menues_layout" IsVisible="False" Orientation="Horizontal">
+            <Label x:Name="menues" HorizontalOptions="StartAndExpand"/>
+            <Button HorizontalOptions="EndAndExpand" Style="{StaticResource CustomButton}"
+                Text="Done" Clicked="Button_Clicked" BackgroundColor="LightGreen"
+                    x:Name="button"/>
+        </StackLayout>
     </StackLayout>
-    
-    <!-- Show On Click -->
-    <StackLayout x:Name="menues_layout" IsVisible="False" Orientation="Horizontal">
-        <Label x:Name="menues" HorizontalOptions="StartAndExpand"/>
-        <Button HorizontalOptions="EndAndExpand" Style="{StaticResource CustomButton}"
-                Text="Done" Clicked="Button_Clicked"/>
-    </StackLayout>
-</StackLayout>
+</Frame>

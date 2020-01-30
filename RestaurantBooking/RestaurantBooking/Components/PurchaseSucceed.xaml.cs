@@ -15,11 +15,14 @@ namespace RestaurantBooking.Components
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PurchaseSucceed : StackLayout, PopupComponent
     {
+        private bool Loading;
         private Reservation res;
+        private double price;
 
-        public PurchaseSucceed(Reservation res)
+        public PurchaseSucceed(Reservation res, double price)
         {
             this.res = res;
+            this.price = price;
             InitializeComponent();
             orderId.Text = "Order number is "+res.ID;
             orderName.Placeholder = "Test" + App.rnd(1, 999);
@@ -42,36 +45,27 @@ namespace RestaurantBooking.Components
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            res.DisplayName = string.IsNullOrEmpty(orderName.Text) ? orderName.Text :
-                orderName.Placeholder;
-            Navigation.PushAsync(new OrderDisplayPage());
-            /*
-            try
+            if (Loading)
             {
-
-                MailMessage mail = new MailMessage();
-                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-
-                mail.From = new MailAddress("hbgtestare@outlook.com");
-                mail.To.Add("osama-alnori@outlook.com");
-                mail.Subject = "Test";
-                mail.Body = "Hello";
-                SmtpServer.Port = 587;
-                SmtpServer.Host = "smtp.gmail.com";
-                SmtpServer.EnableSsl = true;
-                SmtpServer.UseDefaultCredentials = false;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("hbgtestare@outlook.com", "hbghbg123");
-                SmtpServer.Send(mail);
-            }
-            catch (Exception ex)
-            {
-                orderId.Text = ex.Message;
                 return;
             }
-            */
-            // Send
+            Loading = true;
+            res.DisplayName = string.IsNullOrEmpty(orderName.Text) ? orderName.Text :
+                orderName.Placeholder;
+            await Main.AddResv(res);
+            Navigation.PushAsync(new OrderDisplayPage(res));
+            if (!string.IsNullOrEmpty(email.Text))
+            {
+                App.SendEmail(/*email.Text*/"osama-alnori@outlook.com", res, price);
+            }
+            for(int x = 0; x < Navigation.NavigationStack.Count-1; x++)
+            {
+                Navigation.RemovePage(Navigation.NavigationStack[x]);
+                x = -1;
+            }
             OnClosed();
             await Navigation.PopPopupAsync();
         }
+
     }
 }

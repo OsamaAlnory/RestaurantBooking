@@ -6,6 +6,7 @@ namespace RestaurantBooking.Database
 {
     public class IMenu
     {
+        public string ID { get; set; }
         public string RestID { get; set; }
         public string MenuName { get; set; }
         public string MenuImage { get; set; }

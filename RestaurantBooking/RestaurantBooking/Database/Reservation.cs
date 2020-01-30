@@ -8,9 +8,10 @@ namespace RestaurantBooking.Database
     {
         public string RestID { get; set; }
         public string ID { get; set; }
-        public string Menues { get; set; }
+        public string Menus { get; set; }
         public int TableNr { get; set; }
         public string DisplayName { get; set; }
+        public string Status { get; set; }
 
     }
 }

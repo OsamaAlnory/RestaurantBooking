@@ -4,37 +4,53 @@
              xmlns:qrc="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
              x:Class="RestaurantBooking.Pages.RestaurantPage" BackgroundColor="SkyBlue">
     <ContentPage Title="Reservations">
-        <StackLayout>
-            <ScrollView>
-                <StackLayout>
-                    
-                </StackLayout>
-            </ScrollView>
-        </StackLayout>
+        <AbsoluteLayout>
+            <Image x:Name="bkg1" AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" Aspect="Fill"/>
+            <StackLayout AbsoluteLayout.LayoutFlags="All"
+                         AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <ScrollView>
+                    <StackLayout x:Name="layout_r" Spacing="0">
+                        
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </AbsoluteLayout>
     </ContentPage>
     <ContentPage Title="Menues">
-        <StackLayout Padding="12">
-            <!-- List of menues -->
-            <ScrollView>
-                <StackLayout>
-                    
-                </StackLayout>
-            </ScrollView>
-            <Button Text="Add Menu" Style="{StaticResource CustomButton}"
+        <AbsoluteLayout>
+            <Image x:Name="bkg2" AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+            <StackLayout Padding="12" AbsoluteLayout.LayoutFlags="All"
+                         AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <!-- List of menues -->
+                <ScrollView>
+                    <StackLayout x:Name="layout_m">
+
+                    </StackLayout>
+                </ScrollView>
+                <Button Text="Add Menu" Style="{StaticResource CustomButton}" BackgroundColor="Purple"
                     VerticalOptions="EndAndExpand" Clicked="Button_Clicked_1"/>
-        </StackLayout>
+            </StackLayout>
+        </AbsoluteLayout>
     </ContentPage>
     <ContentPage Title="QR">
-        <StackLayout>
-            <Label Text="Table Number"/>
-            <Picker x:Name="picker"/>
-            <qrc:ZXingBarcodeImageView x:Name="qr" AutomationId="Restaurant" HorizontalOptions="FillAndExpand" 
+        <AbsoluteLayout>
+            <Image x:Name="bkg3" AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+            <StackLayout Padding="10" Spacing="20" AbsoluteLayout.LayoutFlags="All"
+                         AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Label Text="Table Number" HorizontalOptions="CenterAndExpand"
+                   FontSize="26" TextColor="White" Margin="0,7,0,0" FontAttributes="Bold"/>
+                <Frame CornerRadius="12" Padding="3">
+                    <Picker x:Name="picker" SelectedIndexChanged="picker_SelectedIndexChanged"
+                    BackgroundColor="White" FontSize="24" TextColor="Green"/>
+                </Frame>
+                <qrc:ZXingBarcodeImageView x:Name="qr" AutomationId="Restaurant" HorizontalOptions="FillAndExpand" 
      VerticalOptions="FillAndExpand" BarcodeFormat="QR_CODE"/>
-            <!-- Picker add chooseable reservation status? -->
-            <Button VerticalOptions="EndAndExpand" Style="{StaticResource CustomButton}"
-                    Text="Show Code" BackgroundColor="Purple" FontAttributes="Bold"
-                    Clicked="Button_Clicked"/>
-        </StackLayout>
+                <!-- Picker add chooseable reservation status? -->
+            </StackLayout>
+        </AbsoluteLayout>
     </ContentPage>
     <!--<ContentPage Title="Settings">
         
