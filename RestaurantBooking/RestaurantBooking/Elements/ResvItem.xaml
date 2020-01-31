@@ -4,9 +4,10 @@
              x:Class="RestaurantBooking.Elements.ResvItem" Padding="2" BorderColor="LightBlue">
     <StackLayout Padding="8">
         <!-- Visible Row -->
-        <StackLayout Orientation="Horizontal">
-            <Label x:Name="orderId" TextColor="Black" FontSize="24"/>
-            <Label x:Name="orderName" TextColor="Black" FontSize="24"/>
+        <StackLayout Orientation="Horizontal" Padding="3">
+            <Label x:Name="orderId" TextColor="Black" FontSize="20" HorizontalOptions="StartAndExpand"/>
+            <Label x:Name="orderName" TextColor="Black" FontSize="20" HorizontalOptions="CenterAndExpand"/>
+            <Label x:Name="orderTable" TextColor="Black" FontSize="20" HorizontalOptions="EndAndExpand"/>
         </StackLayout>
 
         <!-- Show On Click -->

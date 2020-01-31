@@ -30,7 +30,7 @@ namespace RestaurantBooking.Pages
                     animation.IsVisible = true;
                     animation.Play();
                     Device.StartTimer(TimeSpan.FromSeconds(4), () =>
-                    {
+                    {// If Restaurant = null
                     App.OpenLoading(this, "RestaurantPage", 1, 
                         Main.LoadAdmin(Main.GetRestaurantByUser(user)), user);
                         ClosePage();

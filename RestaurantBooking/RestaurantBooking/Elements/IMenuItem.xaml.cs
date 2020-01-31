@@ -25,8 +25,14 @@ namespace RestaurantBooking.Elements
 			InitializeComponent ();
             menu_name.Text = menu.MenuName;
             menu_price.Text = menu.Price+"kr";
-            icon.Source = App.getImage("qr.png");
+            icon.Source = App.getImage("no-image.png");
+            LoadImg();
 		}
+
+        private async void LoadImg()
+        {
+            icon.Source = App.ByteToImage((await Main.LoadImage(menu.MenuImage)).Data);
+        }
 
         private async void Button_Clicked(object sender, EventArgs e)
         {

@@ -91,7 +91,7 @@ namespace RestaurantBooking.Pages
                 x++;
             }
             Reservation res = new Reservation { Menus = toString, ID=App.rnd(1000,9999)+""
-            , TableNr = page.tableNumber, RestID = page.rest.RestID};
+            , TableNr = page.tableNumber, RestID = page.rest.RestID, Status = "default"};
             new Popup(new PurchaseSucceed(res, price), this).Show();
         }
 

@@ -29,6 +29,7 @@ namespace RestaurantBooking.Components
             menu_image.Source = App.getImage("no-image.png");
             TapGestureRecognizer tap = new TapGestureRecognizer();
             tap.Tapped += (s, e) => ChooseImage();
+            menu_image.GestureRecognizers.Add(tap);
 		}
 
         public bool BackgroundClose()
@@ -75,6 +76,7 @@ namespace RestaurantBooking.Components
                     await Main.AddImage(img);
                     Navigation.PopPopupAsync();
                     new Popup(new SuccessMessage("Menu has been added!"), page).Show();
+                    page.RefreshMenu();
                 }
                 catch (Exception ex)
                 {

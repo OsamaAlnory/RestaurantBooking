@@ -18,7 +18,7 @@
             </StackLayout>
             <StackLayout x:Name="product_layout" AbsoluteLayout.LayoutFlags="All"
                          AbsoluteLayout.LayoutBounds="0,0,1,1" IsVisible="False">
-                <Image x:Name="foodImg" Aspect="Fill" AbsoluteLayout.LayoutFlags="All"
+                <Image x:Name="foodImg" Aspect="AspectFill" AbsoluteLayout.LayoutFlags="All"
                    AbsoluteLayout.LayoutBounds="0,0,1,1"/>
             </StackLayout>
         </AbsoluteLayout>

@@ -3,11 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:dir="clr-namespace:RestaurantBooking.Components"
              x:Class="RestaurantBooking.Components.AddMenu" HorizontalOptions="FillAndExpand"
-             VerticalOptions="FillAndExpand">
-    <Image x:Name="menu_image" HeightRequest="50"/>
-    <dir:IEntry Placeholder="Menu Name" x:Name="menu_name"/>
-    <dir:IEntry Placeholder="Price" x:Name="menu_price"/>
-    <dir:IEntry Placeholder="Description" x:Name="menu_desc"/>
+             VerticalOptions="FillAndExpand" Spacing="10">
+    <Image x:Name="menu_image" HeightRequest="100"/>
+    <Frame Padding="5" CornerRadius="12" BorderColor="LightBlue">
+        <dir:IEntry Placeholder="Menu Name" x:Name="menu_name"/>
+    </Frame>
+    <Frame Padding="5" CornerRadius="12" BorderColor="LightBlue">
+        <dir:IEntry Placeholder="Price" x:Name="menu_price"/>
+    </Frame>
+    <Frame Padding="5" CornerRadius="12" BorderColor="LightBlue">
+        <dir:IEntry Placeholder="Description" x:Name="menu_desc"/>
+    </Frame>
     <Button Text="Click To Add" Clicked="Button_Clicked" VerticalOptions="EndAndExpand"
             BackgroundColor="Green" Style="{StaticResource CustomButton}"/>
     

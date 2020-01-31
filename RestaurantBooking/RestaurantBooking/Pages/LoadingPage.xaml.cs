@@ -46,13 +46,14 @@ namespace RestaurantBooking.Pages
                 {
                     var user = o[0] as User;
                     page = new RestaurantPage(Main.GetRestaurantByUser(user), 
-                        user.UType == "display");
+                        user.UType == "Display");
                 } else if(pageName == "MenuPage")
                 {
                     var rest = o[0] as Restaurant;
                     page = new MenuPage(rest, int.Parse(o[1].ToString()));
                 }
                 Navigation.PushAsync(page);
+                Navigation.RemovePage(this);
             } else
             {
                 loading.IsVisible = false;

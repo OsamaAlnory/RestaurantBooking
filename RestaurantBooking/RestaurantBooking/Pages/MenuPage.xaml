@@ -15,7 +15,7 @@
     <StackLayout Padding="10">
         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                      Padding="7">
-            <Frame CornerRadius="12" Padding="0">
+            <Frame CornerRadius="12" Padding="0" HorizontalOptions="StartAndExpand">
                 <Image x:Name="icon_button" HeightRequest="40" WidthRequest="40"/>
             </Frame>
             <Label Text="Menues" TextColor="Black" HorizontalOptions="CenterAndExpand" FontSize="30"

@@ -15,6 +15,7 @@ namespace RestaurantBooking.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RestaurantPage : TabbedPage
     {
+
         private Restaurant rest;
 
         public RestaurantPage(Restaurant rest, bool isDisplay)
@@ -44,8 +45,8 @@ namespace RestaurantBooking.Pages
             RefreshResv();
             // Reload Reservations every 5 secs.
             Device.StartTimer(TimeSpan.FromSeconds(isDisplay?3:6), () => {
-                
-                return false;
+                RefreshResv();
+                return true;
             });
         }
 

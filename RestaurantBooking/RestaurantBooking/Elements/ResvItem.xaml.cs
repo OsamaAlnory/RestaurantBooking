@@ -30,6 +30,7 @@ namespace RestaurantBooking.Elements
             this.GestureRecognizers.Add(tap);
             orderId.Text = resv.ID;
             orderName.Text = resv.DisplayName;
+            orderTable.Text = "Table: "+resv.TableNr;
             string label = "";
             string[] d = resv.Menus.Split(';');
             foreach(string a in d)
@@ -38,6 +39,15 @@ namespace RestaurantBooking.Elements
                 label += b[1] + "x " + b[0] + "\n";
             }
             menues.Text = label;
+            if(resv.Status != null && resv.Status == "Done")
+            {
+                button.BackgroundColor = Color.Crimson;
+                button.Text = "Remove";
+            } else
+            {
+                button.BackgroundColor = Color.LightGreen;
+                button.Text = "Done";
+            }
 		}
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -47,7 +57,7 @@ namespace RestaurantBooking.Elements
                 return;
             }
             Loading = true;
-            if(resv.Status == null)
+            if(resv.Status == null || resv.Status != "Done")
             {
                 button.BackgroundColor = Color.Crimson;
                 button.Text = "Remove";

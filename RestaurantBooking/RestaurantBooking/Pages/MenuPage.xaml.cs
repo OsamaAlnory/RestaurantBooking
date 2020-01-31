@@ -55,7 +55,7 @@ namespace RestaurantBooking.Pages
 
         private void LoadIcon()
         {
-            icon_button.Source = App.getImage("no-image.png");
+            icon_button.Source = App.getImage("qr.png");
             //var icon = await Main.LoadImage(rest.RestID + "" + rest.Icon);
             //icon_button.Source = App.ByteToImage(icon.Data);
         }

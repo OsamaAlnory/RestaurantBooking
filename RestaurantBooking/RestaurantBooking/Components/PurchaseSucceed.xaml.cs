@@ -50,7 +50,7 @@ namespace RestaurantBooking.Components
                 return;
             }
             Loading = true;
-            res.DisplayName = string.IsNullOrEmpty(orderName.Text) ? orderName.Text :
+            res.DisplayName = !string.IsNullOrEmpty(orderName.Text) ? orderName.Text :
                 orderName.Placeholder;
             await Main.AddResv(res);
             Navigation.PushAsync(new OrderDisplayPage(res));

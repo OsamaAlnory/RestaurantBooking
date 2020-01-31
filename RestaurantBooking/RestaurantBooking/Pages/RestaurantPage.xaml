@@ -20,7 +20,7 @@
     <ContentPage Title="Menues">
         <AbsoluteLayout>
             <Image x:Name="bkg2" AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" Aspect="Fill"/>
             <StackLayout Padding="12" AbsoluteLayout.LayoutFlags="All"
                          AbsoluteLayout.LayoutBounds="0,0,1,1">
                 <!-- List of menues -->
@@ -37,7 +37,7 @@
     <ContentPage Title="QR">
         <AbsoluteLayout>
             <Image x:Name="bkg3" AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" Aspect="Fill"/>
             <StackLayout Padding="10" Spacing="20" AbsoluteLayout.LayoutFlags="All"
                          AbsoluteLayout.LayoutBounds="0,0,1,1">
                 <Label Text="Table Number" HorizontalOptions="CenterAndExpand"

@@ -82,10 +82,10 @@ namespace RestaurantBooking
             return await client.PostAsync(LINK + RI, c);
         }
 
-        public static async Task<HttpResponseMessage> RemoveUser(User user)
+        public static async Task<HttpResponseMessage> RemoveUser(string id)
         {
             HttpClient client = new HttpClient();
-            return await client.DeleteAsync(LINK + RU + "/" + user.RestID);
+            return await client.DeleteAsync(LINK + RU + "/" + id);
         }
 
         public static async Task<HttpResponseMessage> RemoveMenu(IMenu m)

@@ -9,8 +9,5 @@ namespace RestaurantBooking.Database
         public string ID { get; set; }
         public byte[] Data { get; set; }
 
-
-
-
     }
 }
